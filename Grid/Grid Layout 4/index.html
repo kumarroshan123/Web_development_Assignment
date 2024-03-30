@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        .main{
+            height: 300px;
+            width: 70%;
+            display: grid;
+            gap:20px;
+            grid-template-areas: "a a b b"
+                                 "c d d d"
+                                 "e e e e";
+        }
+        .box{
+            display: flex;
+            padding: 20px;
+            align-items: center;
+            background-color: rgb(75, 75, 75);
+            border-radius: 10px;
+            color: white;
+            font-size: xx-large;
+        }
+        .main > div:nth-child(1){
+            grid-area: a;
+        }
+        .main > div:nth-child(2){
+            grid-area: b;
+        }
+        .main > div:nth-child(3){
+            grid-area: c;
+        }
+        .main > div:nth-child(4){
+            grid-area: d;
+        }
+        .main > div:nth-child(5){
+            grid-area: e;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box">A</div>
+        <div class="box">B</div>
+        <div class="box">C</div>
+        <div class="box">D</div>
+        <div class="box">E</div>
+    </div>
+</body>
+</html>
