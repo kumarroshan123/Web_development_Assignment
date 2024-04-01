@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Design</title>
+    <style>
+        .main{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            background-color: rgb(181, 179, 179);
+        }
+        .head{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .head > div:nth-child(1){
+            width: 60px;
+            border:2px solid rgb(189, 15, 44);
+        }
+        .head > div:nth-child(3){
+            width: 60px;
+            border:2px solid rgb(189, 15, 44);
+        }
+        .head  h2{
+            font-size: 2em;
+        }
+        .body{
+            width: auto;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 15px;
+            padding: 40px 77px;
+            position: relative;
+            /* margin-left: 50px; */
+        }
+        .box{
+            width: 300px;
+            background-color: whitesmoke;
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .box-img img{
+            width: 300px;
+            height: 170px;
+            border-radius: 10px;
+        }
+        .box-text{
+            width: 300px;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            
+        }
+        .box-text img{
+            width: 20px;
+            
+        }
+        .box-text div:nth-child(1){
+           width: 120px;
+           height: 50px;
+           position: relative;
+           top: 10px;
+           margin-bottom: 10px;
+           border: 3px solid rgb(244, 154, 169);
+            background-color: rgb(247, 212, 218);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px 0px 0px 10px;
+            border-style: dashed;
+        }
+        .box-text div:nth-child(2){
+           width: 40px;
+           height: 50px;
+           position: relative;
+           top: 10px;
+           margin-bottom: 10px;
+            border: 3px solid rgb(244, 154, 169);
+            background-color: rgb(247, 212, 218);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0px 10px 10px 0px;
+            border-style: dashed;
+            cursor: pointer;
+        }
+        @media all and (min-width: 480px) and (max-width:800px){
+            .body{
+                grid-template-columns: repeat(2,1fr);
+                gap: 15px;
+                padding: 50px 83px;
+                position: relative;
+                /* margin-left: 50px; */
+            }
+        }
+        @media all and (min-width: 0px) and (max-width:480px){
+            .body{
+                grid-template-columns: repeat(1,1fr);
+                gap: 15px;
+                padding: 50px 83px;
+                position: relative;
+                /* margin-left: 50px; */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="head">
+            <div></div>
+            <div><h2>OFFERS</h2></div>
+            <div></div>
+        </div>
+        <div class="body">
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://d32baadbbpueqt.cloudfront.net/Promotion/c20dff62-0ac0-476a-a6bc-13a955786f09.jpg" alt="">
+                </div>
+                <div class="box-text">
+                    <div>
+                    <h3>LIPSTRIO</h3>
+                    </div>
+                    <div>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANoAAADnCAMAAABPJ7iaAAAAeFBMVEX///8AAABPT08RERHt7e3V1dVjY2Pa2tqAgIB4eHj7+/spKSmpqamurq5paWlsbGwzMzNISEi7u7tcXFyUlJSenp7R0dHFxcXo6OhXV1fj4+O1tbXx8fGGhoYUFBQfHx+Ojo4vLy86Ojpzc3MiIiLBwcEyMjKbm5siucIeAAAEqUlEQVR4nO3d2XLiMBBGYRMSFicYCGvYl8nw/m84pKjJQloWajWttus/1zMqfTFxbCPbWUa0WHaK4aDZ0G+zHXZ3vSdqUgK9jhKQritm4q58nBr12SQXlZ1Se370IgebblNjrhrMhWR2PotfLUVkFvYev+sIyIapEY6KaNlbaoKzfqSsnxpQ0i5KNkk9/dJeI2Tt1JP3tOLT9qnn7mnElr2knro37hFlnnri/gZMmu19yKUpj5bivCw03m/bNPW0b+qRQ+uknvVN9Ti0P47BNtumflvXb0eLIXukh+osOD8mgdoFPSHGUDNyIOYeSaRXckaMs1Jy1/8uP+GAyEMIxl9tai/CP7CR6UDMiXGhhDqdkb9SFha12cbhw7SIYVh/RAR7Iua0Cx/mwSCNOsliXCShaFLXyLhRW60bPozFrQaaL9BUA80XaKqB5gs01UDzZZFGHR6npK3aYlGXEIoF/W8X7slK0NqTo+u6mEqtCbmIJpo231lYuNA8tqVpbTvfFB+ur3tE0Va2vige/rx4GkNbqk/e106I1lWfub/ht5VdfJrNlSabr8lzaflee9K39nnRiksbqE/55v4vWGDSbK7ourSPollchfdVEUGzvoZmyaftlacaXM6l9dSnGtqaS1OfaXgrHs3+RrsccTFo1JeW5mLRFurT5DTj0GzdDODqyKG5Dovfui39jo5lJo0th0YPJXgrRWCOs8bHcBp1kbDRSLU46KMVec1pFk4jF+OkXB2UZXP6YxRMo/YiqdfQUOt61uG0NfEfYparS0RfSReh/b4GqBu1PLAfTqM2/r3ugLw1ivYA2rdAUw000EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00CpKK32ZS3Vo1HOLa7LVqOdQ1YRGPeG39B1l1aFRj+p5KxumOjTyPW5lLxevDo1+IWDJ06OqQ1uRtMboPNucqkK07C9tC8oojdqP1IQm8QxjozTn62BrQBN4IK5VmsBbpc3S4jebWVr8s/nt0qKfZGyXRh9I1oOWHetLI0+2a0KLs9mmRb1QxzgtZl9inZYt2Oc35mmOF9XXg5blJ9YBZRVo594Z+5OK0M4tluPR8PBMR23W6tBKozYqaHcLNF+gqQaaL9BUA80XaKqB5gs01UDzBZpqoPkCTTXQfIGmGmi+QFMNNF+gqQaarxrTqFWvFmn98GF2xDDp3gN+iVr23g0fhvoq/yA/26BaxJzW4cOQNwak3WxSU6JXGJbdz3Hv6LswZoyRyIEaRap3Zrf79IRWjLGcC9U2Tf02rsnsOT+m2HWhOjH2Ilk2Tz3rm5pyaJHLQnXasmSOPZKtuH+NJG6eunNMWQU2G/8QYpR66p5Ye/5LjlsVzRRz+GD7IzmJkNGnNlYaRcmyzHHkZiDG6fVV1BMGLBQvi7vn4X61BGQid2KKdxKRnc9KD6klVz0LXn/i3vNwn+J2+tfl49Sez065qOyjd+p6knatkgdSRDXtrYvB1nkyf8eag2GxXi6oSf0D9/B2E5bnHu8AAAAASUVORK5CYII=" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://d32baadbbpueqt.cloudfront.net/Promotion/e1a394e0-9c14-45e0-999e-16ad9589b46a.jpg" alt="">
+                </div>
+                <div class="box-text">
+                    <div>
+                    <h3>LIPSTRIO</h3>
+                    </div>
+                    <div>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANoAAADnCAMAAABPJ7iaAAAAeFBMVEX///8AAABPT08RERHt7e3V1dVjY2Pa2tqAgIB4eHj7+/spKSmpqamurq5paWlsbGwzMzNISEi7u7tcXFyUlJSenp7R0dHFxcXo6OhXV1fj4+O1tbXx8fGGhoYUFBQfHx+Ojo4vLy86Ojpzc3MiIiLBwcEyMjKbm5siucIeAAAEqUlEQVR4nO3d2XLiMBBGYRMSFicYCGvYl8nw/m84pKjJQloWajWttus/1zMqfTFxbCPbWUa0WHaK4aDZ0G+zHXZ3vSdqUgK9jhKQritm4q58nBr12SQXlZ1Se370IgebblNjrhrMhWR2PotfLUVkFvYev+sIyIapEY6KaNlbaoKzfqSsnxpQ0i5KNkk9/dJeI2Tt1JP3tOLT9qnn7mnElr2knro37hFlnnri/gZMmu19yKUpj5bivCw03m/bNPW0b+qRQ+uknvVN9Ti0P47BNtumflvXb0eLIXukh+osOD8mgdoFPSHGUDNyIOYeSaRXckaMs1Jy1/8uP+GAyEMIxl9tai/CP7CR6UDMiXGhhDqdkb9SFha12cbhw7SIYVh/RAR7Iua0Cx/mwSCNOsliXCShaFLXyLhRW60bPozFrQaaL9BUA80XaKqB5gs01UDzZZFGHR6npK3aYlGXEIoF/W8X7slK0NqTo+u6mEqtCbmIJpo231lYuNA8tqVpbTvfFB+ur3tE0Va2vige/rx4GkNbqk/e106I1lWfub/ht5VdfJrNlSabr8lzaflee9K39nnRiksbqE/55v4vWGDSbK7ourSPollchfdVEUGzvoZmyaftlacaXM6l9dSnGtqaS1OfaXgrHs3+RrsccTFo1JeW5mLRFurT5DTj0GzdDODqyKG5Dovfui39jo5lJo0th0YPJXgrRWCOs8bHcBp1kbDRSLU46KMVec1pFk4jF+OkXB2UZXP6YxRMo/YiqdfQUOt61uG0NfEfYparS0RfSReh/b4GqBu1PLAfTqM2/r3ugLw1ivYA2rdAUw000EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00CpKK32ZS3Vo1HOLa7LVqOdQ1YRGPeG39B1l1aFRj+p5KxumOjTyPW5lLxevDo1+IWDJ06OqQ1uRtMboPNucqkK07C9tC8oojdqP1IQm8QxjozTn62BrQBN4IK5VmsBbpc3S4jebWVr8s/nt0qKfZGyXRh9I1oOWHetLI0+2a0KLs9mmRb1QxzgtZl9inZYt2Oc35mmOF9XXg5blJ9YBZRVo594Z+5OK0M4tluPR8PBMR23W6tBKozYqaHcLNF+gqQaaL9BUA80XaKqB5gs01UDzBZpqoPkCTTXQfIGmGmi+QFMNNF+gqQaarxrTqFWvFmn98GF2xDDp3gN+iVr23g0fhvoq/yA/26BaxJzW4cOQNwak3WxSU6JXGJbdz3Hv6LswZoyRyIEaRap3Zrf79IRWjLGcC9U2Tf02rsnsOT+m2HWhOjH2Ilk2Tz3rm5pyaJHLQnXasmSOPZKtuH+NJG6eunNMWQU2G/8QYpR66p5Ye/5LjlsVzRRz+GD7IzmJkNGnNlYaRcmyzHHkZiDG6fVV1BMGLBQvi7vn4X61BGQid2KKdxKRnc9KD6klVz0LXn/i3vNwn+J2+tfl49Sez065qOyjd+p6knatkgdSRDXtrYvB1nkyf8eag2GxXi6oSf0D9/B2E5bnHu8AAAAASUVORK5CYII=" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://d32baadbbpueqt.cloudfront.net/Promotion/ffca0da4-6728-45cc-ab15-dd32302253cd.jpg" alt="">
+                </div>
+                <div class="box-text">
+                    <div>
+                    <h3>LIPSTRIO</h3>
+                    </div>
+                    <div>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANoAAADnCAMAAABPJ7iaAAAAeFBMVEX///8AAABPT08RERHt7e3V1dVjY2Pa2tqAgIB4eHj7+/spKSmpqamurq5paWlsbGwzMzNISEi7u7tcXFyUlJSenp7R0dHFxcXo6OhXV1fj4+O1tbXx8fGGhoYUFBQfHx+Ojo4vLy86Ojpzc3MiIiLBwcEyMjKbm5siucIeAAAEqUlEQVR4nO3d2XLiMBBGYRMSFicYCGvYl8nw/m84pKjJQloWajWttus/1zMqfTFxbCPbWUa0WHaK4aDZ0G+zHXZ3vSdqUgK9jhKQritm4q58nBr12SQXlZ1Se370IgebblNjrhrMhWR2PotfLUVkFvYev+sIyIapEY6KaNlbaoKzfqSsnxpQ0i5KNkk9/dJeI2Tt1JP3tOLT9qnn7mnElr2knro37hFlnnri/gZMmu19yKUpj5bivCw03m/bNPW0b+qRQ+uknvVN9Ti0P47BNtumflvXb0eLIXukh+osOD8mgdoFPSHGUDNyIOYeSaRXckaMs1Jy1/8uP+GAyEMIxl9tai/CP7CR6UDMiXGhhDqdkb9SFha12cbhw7SIYVh/RAR7Iua0Cx/mwSCNOsliXCShaFLXyLhRW60bPozFrQaaL9BUA80XaKqB5gs01UDzZZFGHR6npK3aYlGXEIoF/W8X7slK0NqTo+u6mEqtCbmIJpo231lYuNA8tqVpbTvfFB+ur3tE0Va2vige/rx4GkNbqk/e106I1lWfub/ht5VdfJrNlSabr8lzaflee9K39nnRiksbqE/55v4vWGDSbK7ourSPollchfdVEUGzvoZmyaftlacaXM6l9dSnGtqaS1OfaXgrHs3+RrsccTFo1JeW5mLRFurT5DTj0GzdDODqyKG5Dovfui39jo5lJo0th0YPJXgrRWCOs8bHcBp1kbDRSLU46KMVec1pFk4jF+OkXB2UZXP6YxRMo/YiqdfQUOt61uG0NfEfYparS0RfSReh/b4GqBu1PLAfTqM2/r3ugLw1ivYA2rdAUw000EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00CpKK32ZS3Vo1HOLa7LVqOdQ1YRGPeG39B1l1aFRj+p5KxumOjTyPW5lLxevDo1+IWDJ06OqQ1uRtMboPNucqkK07C9tC8oojdqP1IQm8QxjozTn62BrQBN4IK5VmsBbpc3S4jebWVr8s/nt0qKfZGyXRh9I1oOWHetLI0+2a0KLs9mmRb1QxzgtZl9inZYt2Oc35mmOF9XXg5blJ9YBZRVo594Z+5OK0M4tluPR8PBMR23W6tBKozYqaHcLNF+gqQaaL9BUA80XaKqB5gs01UDzBZpqoPkCTTXQfIGmGmi+QFMNNF+gqQaarxrTqFWvFmn98GF2xDDp3gN+iVr23g0fhvoq/yA/26BaxJzW4cOQNwak3WxSU6JXGJbdz3Hv6LswZoyRyIEaRap3Zrf79IRWjLGcC9U2Tf02rsnsOT+m2HWhOjH2Ilk2Tz3rm5pyaJHLQnXasmSOPZKtuH+NJG6eunNMWQU2G/8QYpR66p5Ye/5LjlsVzRRz+GD7IzmJkNGnNlYaRcmyzHHkZiDG6fVV1BMGLBQvi7vn4X61BGQid2KKdxKRnc9KD6klVz0LXn/i3vNwn+J2+tfl49Sez065qOyjd+p6knatkgdSRDXtrYvB1nkyf8eag2GxXi6oSf0D9/B2E5bnHu8AAAAASUVORK5CYII=" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://d32baadbbpueqt.cloudfront.net/Promotion/e850895b-b450-4f6b-9ef7-a5ec0a14ea5d.jpg" alt="">
+                </div>
+                <div class="box-text">
+                    <div>
+                    <h3>LIPSTRIO</h3>
+                    </div>
+                    <div>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANoAAADnCAMAAABPJ7iaAAAAeFBMVEX///8AAABPT08RERHt7e3V1dVjY2Pa2tqAgIB4eHj7+/spKSmpqamurq5paWlsbGwzMzNISEi7u7tcXFyUlJSenp7R0dHFxcXo6OhXV1fj4+O1tbXx8fGGhoYUFBQfHx+Ojo4vLy86Ojpzc3MiIiLBwcEyMjKbm5siucIeAAAEqUlEQVR4nO3d2XLiMBBGYRMSFicYCGvYl8nw/m84pKjJQloWajWttus/1zMqfTFxbCPbWUa0WHaK4aDZ0G+zHXZ3vSdqUgK9jhKQritm4q58nBr12SQXlZ1Se370IgebblNjrhrMhWR2PotfLUVkFvYev+sIyIapEY6KaNlbaoKzfqSsnxpQ0i5KNkk9/dJeI2Tt1JP3tOLT9qnn7mnElr2knro37hFlnnri/gZMmu19yKUpj5bivCw03m/bNPW0b+qRQ+uknvVN9Ti0P47BNtumflvXb0eLIXukh+osOD8mgdoFPSHGUDNyIOYeSaRXckaMs1Jy1/8uP+GAyEMIxl9tai/CP7CR6UDMiXGhhDqdkb9SFha12cbhw7SIYVh/RAR7Iua0Cx/mwSCNOsliXCShaFLXyLhRW60bPozFrQaaL9BUA80XaKqB5gs01UDzZZFGHR6npK3aYlGXEIoF/W8X7slK0NqTo+u6mEqtCbmIJpo231lYuNA8tqVpbTvfFB+ur3tE0Va2vige/rx4GkNbqk/e106I1lWfub/ht5VdfJrNlSabr8lzaflee9K39nnRiksbqE/55v4vWGDSbK7ourSPollchfdVEUGzvoZmyaftlacaXM6l9dSnGtqaS1OfaXgrHs3+RrsccTFo1JeW5mLRFurT5DTj0GzdDODqyKG5Dovfui39jo5lJo0th0YPJXgrRWCOs8bHcBp1kbDRSLU46KMVec1pFk4jF+OkXB2UZXP6YxRMo/YiqdfQUOt61uG0NfEfYparS0RfSReh/b4GqBu1PLAfTqM2/r3ugLw1ivYA2rdAUw000EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00CpKK32ZS3Vo1HOLa7LVqOdQ1YRGPeG39B1l1aFRj+p5KxumOjTyPW5lLxevDo1+IWDJ06OqQ1uRtMboPNucqkK07C9tC8oojdqP1IQm8QxjozTn62BrQBN4IK5VmsBbpc3S4jebWVr8s/nt0qKfZGyXRh9I1oOWHetLI0+2a0KLs9mmRb1QxzgtZl9inZYt2Oc35mmOF9XXg5blJ9YBZRVo594Z+5OK0M4tluPR8PBMR23W6tBKozYqaHcLNF+gqQaaL9BUA80XaKqB5gs01UDzBZpqoPkCTTXQfIGmGmi+QFMNNF+gqQaarxrTqFWvFmn98GF2xDDp3gN+iVr23g0fhvoq/yA/26BaxJzW4cOQNwak3WxSU6JXGJbdz3Hv6LswZoyRyIEaRap3Zrf79IRWjLGcC9U2Tf02rsnsOT+m2HWhOjH2Ilk2Tz3rm5pyaJHLQnXasmSOPZKtuH+NJG6eunNMWQU2G/8QYpR66p5Ye/5LjlsVzRRz+GD7IzmJkNGnNlYaRcmyzHHkZiDG6fVV1BMGLBQvi7vn4X61BGQid2KKdxKRnc9KD6klVz0LXn/i3vNwn+J2+tfl49Sez065qOyjd+p6knatkgdSRDXtrYvB1nkyf8eag2GxXi6oSf0D9/B2E5bnHu8AAAAASUVORK5CYII=" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://d32baadbbpueqt.cloudfront.net/Promotion/68b0c0a4-02f4-4cc0-be7c-635954106635.jpg" alt="">
+                </div>
+                <div class="box-text">
+                    <div>
+                    <h3>LIPSTRIO</h3>
+                    </div>
+                    <div>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANoAAADnCAMAAABPJ7iaAAAAeFBMVEX///8AAABPT08RERHt7e3V1dVjY2Pa2tqAgIB4eHj7+/spKSmpqamurq5paWlsbGwzMzNISEi7u7tcXFyUlJSenp7R0dHFxcXo6OhXV1fj4+O1tbXx8fGGhoYUFBQfHx+Ojo4vLy86Ojpzc3MiIiLBwcEyMjKbm5siucIeAAAEqUlEQVR4nO3d2XLiMBBGYRMSFicYCGvYl8nw/m84pKjJQloWajWttus/1zMqfTFxbCPbWUa0WHaK4aDZ0G+zHXZ3vSdqUgK9jhKQritm4q58nBr12SQXlZ1Se370IgebblNjrhrMhWR2PotfLUVkFvYev+sIyIapEY6KaNlbaoKzfqSsnxpQ0i5KNkk9/dJeI2Tt1JP3tOLT9qnn7mnElr2knro37hFlnnri/gZMmu19yKUpj5bivCw03m/bNPW0b+qRQ+uknvVN9Ti0P47BNtumflvXb0eLIXukh+osOD8mgdoFPSHGUDNyIOYeSaRXckaMs1Jy1/8uP+GAyEMIxl9tai/CP7CR6UDMiXGhhDqdkb9SFha12cbhw7SIYVh/RAR7Iua0Cx/mwSCNOsliXCShaFLXyLhRW60bPozFrQaaL9BUA80XaKqB5gs01UDzZZFGHR6npK3aYlGXEIoF/W8X7slK0NqTo+u6mEqtCbmIJpo231lYuNA8tqVpbTvfFB+ur3tE0Va2vige/rx4GkNbqk/e106I1lWfub/ht5VdfJrNlSabr8lzaflee9K39nnRiksbqE/55v4vWGDSbK7ourSPollchfdVEUGzvoZmyaftlacaXM6l9dSnGtqaS1OfaXgrHs3+RrsccTFo1JeW5mLRFurT5DTj0GzdDODqyKG5Dovfui39jo5lJo0th0YPJXgrRWCOs8bHcBp1kbDRSLU46KMVec1pFk4jF+OkXB2UZXP6YxRMo/YiqdfQUOt61uG0NfEfYparS0RfSReh/b4GqBu1PLAfTqM2/r3ugLw1ivYA2rdAUw000EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00CpKK32ZS3Vo1HOLa7LVqOdQ1YRGPeG39B1l1aFRj+p5KxumOjTyPW5lLxevDo1+IWDJ06OqQ1uRtMboPNucqkK07C9tC8oojdqP1IQm8QxjozTn62BrQBN4IK5VmsBbpc3S4jebWVr8s/nt0qKfZGyXRh9I1oOWHetLI0+2a0KLs9mmRb1QxzgtZl9inZYt2Oc35mmOF9XXg5blJ9YBZRVo594Z+5OK0M4tluPR8PBMR23W6tBKozYqaHcLNF+gqQaaL9BUA80XaKqB5gs01UDzBZpqoPkCTTXQfIGmGmi+QFMNNF+gqQaarxrTqFWvFmn98GF2xDDp3gN+iVr23g0fhvoq/yA/26BaxJzW4cOQNwak3WxSU6JXGJbdz3Hv6LswZoyRyIEaRap3Zrf79IRWjLGcC9U2Tf02rsnsOT+m2HWhOjH2Ilk2Tz3rm5pyaJHLQnXasmSOPZKtuH+NJG6eunNMWQU2G/8QYpR66p5Ye/5LjlsVzRRz+GD7IzmJkNGnNlYaRcmyzHHkZiDG6fVV1BMGLBQvi7vn4X61BGQid2KKdxKRnc9KD6klVz0LXn/i3vNwn+J2+tfl49Sez065qOyjd+p6knatkgdSRDXtrYvB1nkyf8eag2GxXi6oSf0D9/B2E5bnHu8AAAAASUVORK5CYII=" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://d32baadbbpueqt.cloudfront.net/Promotion/bdb4b316-8392-486a-8782-f6453f0c5540.jpg" alt="">
+                </div>
+                <div class="box-text">
+                    <div>
+                    <h3>LIPSTRIO</h3>
+                    </div>
+                    <div>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANoAAADnCAMAAABPJ7iaAAAAeFBMVEX///8AAABPT08RERHt7e3V1dVjY2Pa2tqAgIB4eHj7+/spKSmpqamurq5paWlsbGwzMzNISEi7u7tcXFyUlJSenp7R0dHFxcXo6OhXV1fj4+O1tbXx8fGGhoYUFBQfHx+Ojo4vLy86Ojpzc3MiIiLBwcEyMjKbm5siucIeAAAEqUlEQVR4nO3d2XLiMBBGYRMSFicYCGvYl8nw/m84pKjJQloWajWttus/1zMqfTFxbCPbWUa0WHaK4aDZ0G+zHXZ3vSdqUgK9jhKQritm4q58nBr12SQXlZ1Se370IgebblNjrhrMhWR2PotfLUVkFvYev+sIyIapEY6KaNlbaoKzfqSsnxpQ0i5KNkk9/dJeI2Tt1JP3tOLT9qnn7mnElr2knro37hFlnnri/gZMmu19yKUpj5bivCw03m/bNPW0b+qRQ+uknvVN9Ti0P47BNtumflvXb0eLIXukh+osOD8mgdoFPSHGUDNyIOYeSaRXckaMs1Jy1/8uP+GAyEMIxl9tai/CP7CR6UDMiXGhhDqdkb9SFha12cbhw7SIYVh/RAR7Iua0Cx/mwSCNOsliXCShaFLXyLhRW60bPozFrQaaL9BUA80XaKqB5gs01UDzZZFGHR6npK3aYlGXEIoF/W8X7slK0NqTo+u6mEqtCbmIJpo231lYuNA8tqVpbTvfFB+ur3tE0Va2vige/rx4GkNbqk/e106I1lWfub/ht5VdfJrNlSabr8lzaflee9K39nnRiksbqE/55v4vWGDSbK7ourSPollchfdVEUGzvoZmyaftlacaXM6l9dSnGtqaS1OfaXgrHs3+RrsccTFo1JeW5mLRFurT5DTj0GzdDODqyKG5Dovfui39jo5lJo0th0YPJXgrRWCOs8bHcBp1kbDRSLU46KMVec1pFk4jF+OkXB2UZXP6YxRMo/YiqdfQUOt61uG0NfEfYparS0RfSReh/b4GqBu1PLAfTqM2/r3ugLw1ivYA2rdAUw000EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00CpKK32ZS3Vo1HOLa7LVqOdQ1YRGPeG39B1l1aFRj+p5KxumOjTyPW5lLxevDo1+IWDJ06OqQ1uRtMboPNucqkK07C9tC8oojdqP1IQm8QxjozTn62BrQBN4IK5VmsBbpc3S4jebWVr8s/nt0qKfZGyXRh9I1oOWHetLI0+2a0KLs9mmRb1QxzgtZl9inZYt2Oc35mmOF9XXg5blJ9YBZRVo594Z+5OK0M4tluPR8PBMR23W6tBKozYqaHcLNF+gqQaaL9BUA80XaKqB5gs01UDzBZpqoPkCTTXQfIGmGmi+QFMNNF+gqQaarxrTqFWvFmn98GF2xDDp3gN+iVr23g0fhvoq/yA/26BaxJzW4cOQNwak3WxSU6JXGJbdz3Hv6LswZoyRyIEaRap3Zrf79IRWjLGcC9U2Tf02rsnsOT+m2HWhOjH2Ilk2Tz3rm5pyaJHLQnXasmSOPZKtuH+NJG6eunNMWQU2G/8QYpR66p5Ye/5LjlsVzRRz+GD7IzmJkNGnNlYaRcmyzHHkZiDG6fVV1BMGLBQvi7vn4X61BGQid2KKdxKRnc9KD6klVz0LXn/i3vNwn+J2+tfl49Sez065qOyjd+p6knatkgdSRDXtrYvB1nkyf8eag2GxXi6oSf0D9/B2E5bnHu8AAAAASUVORK5CYII=" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://d32baadbbpueqt.cloudfront.net/Promotion/937299cf-ede2-4f96-baa1-fb36ac44a513.jpg" alt="">
+                </div>
+                <div class="box-text">
+                    <div>
+                    <h3>LIPSTRIO</h3>
+                    </div>
+                    <div>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANoAAADnCAMAAABPJ7iaAAAAeFBMVEX///8AAABPT08RERHt7e3V1dVjY2Pa2tqAgIB4eHj7+/spKSmpqamurq5paWlsbGwzMzNISEi7u7tcXFyUlJSenp7R0dHFxcXo6OhXV1fj4+O1tbXx8fGGhoYUFBQfHx+Ojo4vLy86Ojpzc3MiIiLBwcEyMjKbm5siucIeAAAEqUlEQVR4nO3d2XLiMBBGYRMSFicYCGvYl8nw/m84pKjJQloWajWttus/1zMqfTFxbCPbWUa0WHaK4aDZ0G+zHXZ3vSdqUgK9jhKQritm4q58nBr12SQXlZ1Se370IgebblNjrhrMhWR2PotfLUVkFvYev+sIyIapEY6KaNlbaoKzfqSsnxpQ0i5KNkk9/dJeI2Tt1JP3tOLT9qnn7mnElr2knro37hFlnnri/gZMmu19yKUpj5bivCw03m/bNPW0b+qRQ+uknvVN9Ti0P47BNtumflvXb0eLIXukh+osOD8mgdoFPSHGUDNyIOYeSaRXckaMs1Jy1/8uP+GAyEMIxl9tai/CP7CR6UDMiXGhhDqdkb9SFha12cbhw7SIYVh/RAR7Iua0Cx/mwSCNOsliXCShaFLXyLhRW60bPozFrQaaL9BUA80XaKqB5gs01UDzZZFGHR6npK3aYlGXEIoF/W8X7slK0NqTo+u6mEqtCbmIJpo231lYuNA8tqVpbTvfFB+ur3tE0Va2vige/rx4GkNbqk/e106I1lWfub/ht5VdfJrNlSabr8lzaflee9K39nnRiksbqE/55v4vWGDSbK7ourSPollchfdVEUGzvoZmyaftlacaXM6l9dSnGtqaS1OfaXgrHs3+RrsccTFo1JeW5mLRFurT5DTj0GzdDODqyKG5Dovfui39jo5lJo0th0YPJXgrRWCOs8bHcBp1kbDRSLU46KMVec1pFk4jF+OkXB2UZXP6YxRMo/YiqdfQUOt61uG0NfEfYparS0RfSReh/b4GqBu1PLAfTqM2/r3ugLw1ivYA2rdAUw000EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00CpKK32ZS3Vo1HOLa7LVqOdQ1YRGPeG39B1l1aFRj+p5KxumOjTyPW5lLxevDo1+IWDJ06OqQ1uRtMboPNucqkK07C9tC8oojdqP1IQm8QxjozTn62BrQBN4IK5VmsBbpc3S4jebWVr8s/nt0qKfZGyXRh9I1oOWHetLI0+2a0KLs9mmRb1QxzgtZl9inZYt2Oc35mmOF9XXg5blJ9YBZRVo594Z+5OK0M4tluPR8PBMR23W6tBKozYqaHcLNF+gqQaaL9BUA80XaKqB5gs01UDzBZpqoPkCTTXQfIGmGmi+QFMNNF+gqQaarxrTqFWvFmn98GF2xDDp3gN+iVr23g0fhvoq/yA/26BaxJzW4cOQNwak3WxSU6JXGJbdz3Hv6LswZoyRyIEaRap3Zrf79IRWjLGcC9U2Tf02rsnsOT+m2HWhOjH2Ilk2Tz3rm5pyaJHLQnXasmSOPZKtuH+NJG6eunNMWQU2G/8QYpR66p5Ye/5LjlsVzRRz+GD7IzmJkNGnNlYaRcmyzHHkZiDG6fVV1BMGLBQvi7vn4X61BGQid2KKdxKRnc9KD6klVz0LXn/i3vNwn+J2+tfl49Sez065qOyjd+p6knatkgdSRDXtrYvB1nkyf8eag2GxXi6oSf0D9/B2E5bnHu8AAAAASUVORK5CYII=" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://d32baadbbpueqt.cloudfront.net/Promotion/771c6c5c-4389-4aed-b77c-e15dc5884862.jpg" alt="">
+                </div>
+                <div class="box-text">
+                    <div>
+                    <h3>LIPSTRIO</h3>
+                    </div>
+                    <div>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANoAAADnCAMAAABPJ7iaAAAAeFBMVEX///8AAABPT08RERHt7e3V1dVjY2Pa2tqAgIB4eHj7+/spKSmpqamurq5paWlsbGwzMzNISEi7u7tcXFyUlJSenp7R0dHFxcXo6OhXV1fj4+O1tbXx8fGGhoYUFBQfHx+Ojo4vLy86Ojpzc3MiIiLBwcEyMjKbm5siucIeAAAEqUlEQVR4nO3d2XLiMBBGYRMSFicYCGvYl8nw/m84pKjJQloWajWttus/1zMqfTFxbCPbWUa0WHaK4aDZ0G+zHXZ3vSdqUgK9jhKQritm4q58nBr12SQXlZ1Se370IgebblNjrhrMhWR2PotfLUVkFvYev+sIyIapEY6KaNlbaoKzfqSsnxpQ0i5KNkk9/dJeI2Tt1JP3tOLT9qnn7mnElr2knro37hFlnnri/gZMmu19yKUpj5bivCw03m/bNPW0b+qRQ+uknvVN9Ti0P47BNtumflvXb0eLIXukh+osOD8mgdoFPSHGUDNyIOYeSaRXckaMs1Jy1/8uP+GAyEMIxl9tai/CP7CR6UDMiXGhhDqdkb9SFha12cbhw7SIYVh/RAR7Iua0Cx/mwSCNOsliXCShaFLXyLhRW60bPozFrQaaL9BUA80XaKqB5gs01UDzZZFGHR6npK3aYlGXEIoF/W8X7slK0NqTo+u6mEqtCbmIJpo231lYuNA8tqVpbTvfFB+ur3tE0Va2vige/rx4GkNbqk/e106I1lWfub/ht5VdfJrNlSabr8lzaflee9K39nnRiksbqE/55v4vWGDSbK7ourSPollchfdVEUGzvoZmyaftlacaXM6l9dSnGtqaS1OfaXgrHs3+RrsccTFo1JeW5mLRFurT5DTj0GzdDODqyKG5Dovfui39jo5lJo0th0YPJXgrRWCOs8bHcBp1kbDRSLU46KMVec1pFk4jF+OkXB2UZXP6YxRMo/YiqdfQUOt61uG0NfEfYparS0RfSReh/b4GqBu1PLAfTqM2/r3ugLw1ivYA2rdAUw000EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00CpKK32ZS3Vo1HOLa7LVqOdQ1YRGPeG39B1l1aFRj+p5KxumOjTyPW5lLxevDo1+IWDJ06OqQ1uRtMboPNucqkK07C9tC8oojdqP1IQm8QxjozTn62BrQBN4IK5VmsBbpc3S4jebWVr8s/nt0qKfZGyXRh9I1oOWHetLI0+2a0KLs9mmRb1QxzgtZl9inZYt2Oc35mmOF9XXg5blJ9YBZRVo594Z+5OK0M4tluPR8PBMR23W6tBKozYqaHcLNF+gqQaaL9BUA80XaKqB5gs01UDzBZpqoPkCTTXQfIGmGmi+QFMNNF+gqQaarxrTqFWvFmn98GF2xDDp3gN+iVr23g0fhvoq/yA/26BaxJzW4cOQNwak3WxSU6JXGJbdz3Hv6LswZoyRyIEaRap3Zrf79IRWjLGcC9U2Tf02rsnsOT+m2HWhOjH2Ilk2Tz3rm5pyaJHLQnXasmSOPZKtuH+NJG6eunNMWQU2G/8QYpR66p5Ye/5LjlsVzRRz+GD7IzmJkNGnNlYaRcmyzHHkZiDG6fVV1BMGLBQvi7vn4X61BGQid2KKdxKRnc9KD6klVz0LXn/i3vNwn+J2+tfl49Sez065qOyjd+p6knatkgdSRDXtrYvB1nkyf8eag2GxXi6oSf0D9/B2E5bnHu8AAAAASUVORK5CYII=" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://d32baadbbpueqt.cloudfront.net/Promotion/c20dff62-0ac0-476a-a6bc-13a955786f09.jpg" alt="">
+                </div>
+                <div class="box-text">
+                    <div>
+                    <h3>LIPSTRIO</h3>
+                    </div>
+                    <div>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANoAAADnCAMAAABPJ7iaAAAAeFBMVEX///8AAABPT08RERHt7e3V1dVjY2Pa2tqAgIB4eHj7+/spKSmpqamurq5paWlsbGwzMzNISEi7u7tcXFyUlJSenp7R0dHFxcXo6OhXV1fj4+O1tbXx8fGGhoYUFBQfHx+Ojo4vLy86Ojpzc3MiIiLBwcEyMjKbm5siucIeAAAEqUlEQVR4nO3d2XLiMBBGYRMSFicYCGvYl8nw/m84pKjJQloWajWttus/1zMqfTFxbCPbWUa0WHaK4aDZ0G+zHXZ3vSdqUgK9jhKQritm4q58nBr12SQXlZ1Se370IgebblNjrhrMhWR2PotfLUVkFvYev+sIyIapEY6KaNlbaoKzfqSsnxpQ0i5KNkk9/dJeI2Tt1JP3tOLT9qnn7mnElr2knro37hFlnnri/gZMmu19yKUpj5bivCw03m/bNPW0b+qRQ+uknvVN9Ti0P47BNtumflvXb0eLIXukh+osOD8mgdoFPSHGUDNyIOYeSaRXckaMs1Jy1/8uP+GAyEMIxl9tai/CP7CR6UDMiXGhhDqdkb9SFha12cbhw7SIYVh/RAR7Iua0Cx/mwSCNOsliXCShaFLXyLhRW60bPozFrQaaL9BUA80XaKqB5gs01UDzZZFGHR6npK3aYlGXEIoF/W8X7slK0NqTo+u6mEqtCbmIJpo231lYuNA8tqVpbTvfFB+ur3tE0Va2vige/rx4GkNbqk/e106I1lWfub/ht5VdfJrNlSabr8lzaflee9K39nnRiksbqE/55v4vWGDSbK7ourSPollchfdVEUGzvoZmyaftlacaXM6l9dSnGtqaS1OfaXgrHs3+RrsccTFo1JeW5mLRFurT5DTj0GzdDODqyKG5Dovfui39jo5lJo0th0YPJXgrRWCOs8bHcBp1kbDRSLU46KMVec1pFk4jF+OkXB2UZXP6YxRMo/YiqdfQUOt61uG0NfEfYparS0RfSReh/b4GqBu1PLAfTqM2/r3ugLw1ivYA2rdAUw000EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00CpKK32ZS3Vo1HOLa7LVqOdQ1YRGPeG39B1l1aFRj+p5KxumOjTyPW5lLxevDo1+IWDJ06OqQ1uRtMboPNucqkK07C9tC8oojdqP1IQm8QxjozTn62BrQBN4IK5VmsBbpc3S4jebWVr8s/nt0qKfZGyXRh9I1oOWHetLI0+2a0KLs9mmRb1QxzgtZl9inZYt2Oc35mmOF9XXg5blJ9YBZRVo594Z+5OK0M4tluPR8PBMR23W6tBKozYqaHcLNF+gqQaaL9BUA80XaKqB5gs01UDzBZpqoPkCTTXQfIGmGmi+QFMNNF+gqQaarxrTqFWvFmn98GF2xDDp3gN+iVr23g0fhvoq/yA/26BaxJzW4cOQNwak3WxSU6JXGJbdz3Hv6LswZoyRyIEaRap3Zrf79IRWjLGcC9U2Tf02rsnsOT+m2HWhOjH2Ilk2Tz3rm5pyaJHLQnXasmSOPZKtuH+NJG6eunNMWQU2G/8QYpR66p5Ye/5LjlsVzRRz+GD7IzmJkNGnNlYaRcmyzHHkZiDG6fVV1BMGLBQvi7vn4X61BGQid2KKdxKRnc9KD6klVz0LXn/i3vNwn+J2+tfl49Sez065qOyjd+p6knatkgdSRDXtrYvB1nkyf8eag2GxXi6oSf0D9/B2E5bnHu8AAAAASUVORK5CYII=" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://d32baadbbpueqt.cloudfront.net/Promotion/c20dff62-0ac0-476a-a6bc-13a955786f09.jpg" alt="">
+                </div>
+                <div class="box-text">
+                    <div>
+                    <h3>LIPSTRIO</h3>
+                    </div>
+                    <div>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANoAAADnCAMAAABPJ7iaAAAAeFBMVEX///8AAABPT08RERHt7e3V1dVjY2Pa2tqAgIB4eHj7+/spKSmpqamurq5paWlsbGwzMzNISEi7u7tcXFyUlJSenp7R0dHFxcXo6OhXV1fj4+O1tbXx8fGGhoYUFBQfHx+Ojo4vLy86Ojpzc3MiIiLBwcEyMjKbm5siucIeAAAEqUlEQVR4nO3d2XLiMBBGYRMSFicYCGvYl8nw/m84pKjJQloWajWttus/1zMqfTFxbCPbWUa0WHaK4aDZ0G+zHXZ3vSdqUgK9jhKQritm4q58nBr12SQXlZ1Se370IgebblNjrhrMhWR2PotfLUVkFvYev+sIyIapEY6KaNlbaoKzfqSsnxpQ0i5KNkk9/dJeI2Tt1JP3tOLT9qnn7mnElr2knro37hFlnnri/gZMmu19yKUpj5bivCw03m/bNPW0b+qRQ+uknvVN9Ti0P47BNtumflvXb0eLIXukh+osOD8mgdoFPSHGUDNyIOYeSaRXckaMs1Jy1/8uP+GAyEMIxl9tai/CP7CR6UDMiXGhhDqdkb9SFha12cbhw7SIYVh/RAR7Iua0Cx/mwSCNOsliXCShaFLXyLhRW60bPozFrQaaL9BUA80XaKqB5gs01UDzZZFGHR6npK3aYlGXEIoF/W8X7slK0NqTo+u6mEqtCbmIJpo231lYuNA8tqVpbTvfFB+ur3tE0Va2vige/rx4GkNbqk/e106I1lWfub/ht5VdfJrNlSabr8lzaflee9K39nnRiksbqE/55v4vWGDSbK7ourSPollchfdVEUGzvoZmyaftlacaXM6l9dSnGtqaS1OfaXgrHs3+RrsccTFo1JeW5mLRFurT5DTj0GzdDODqyKG5Dovfui39jo5lJo0th0YPJXgrRWCOs8bHcBp1kbDRSLU46KMVec1pFk4jF+OkXB2UZXP6YxRMo/YiqdfQUOt61uG0NfEfYparS0RfSReh/b4GqBu1PLAfTqM2/r3ugLw1ivYA2rdAUw000EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00CpKK32ZS3Vo1HOLa7LVqOdQ1YRGPeG39B1l1aFRj+p5KxumOjTyPW5lLxevDo1+IWDJ06OqQ1uRtMboPNucqkK07C9tC8oojdqP1IQm8QxjozTn62BrQBN4IK5VmsBbpc3S4jebWVr8s/nt0qKfZGyXRh9I1oOWHetLI0+2a0KLs9mmRb1QxzgtZl9inZYt2Oc35mmOF9XXg5blJ9YBZRVo594Z+5OK0M4tluPR8PBMR23W6tBKozYqaHcLNF+gqQaaL9BUA80XaKqB5gs01UDzBZpqoPkCTTXQfIGmGmi+QFMNNF+gqQaarxrTqFWvFmn98GF2xDDp3gN+iVr23g0fhvoq/yA/26BaxJzW4cOQNwak3WxSU6JXGJbdz3Hv6LswZoyRyIEaRap3Zrf79IRWjLGcC9U2Tf02rsnsOT+m2HWhOjH2Ilk2Tz3rm5pyaJHLQnXasmSOPZKtuH+NJG6eunNMWQU2G/8QYpR66p5Ye/5LjlsVzRRz+GD7IzmJkNGnNlYaRcmyzHHkZiDG6fVV1BMGLBQvi7vn4X61BGQid2KKdxKRnc9KD6klVz0LXn/i3vNwn+J2+tfl49Sez065qOyjd+p6knatkgdSRDXtrYvB1nkyf8eag2GxXi6oSf0D9/B2E5bnHu8AAAAASUVORK5CYII=" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="https://d32baadbbpueqt.cloudfront.net/Promotion/c20dff62-0ac0-476a-a6bc-13a955786f09.jpg" alt="">
+                </div>
+                <div class="box-text">
+                    <div>
+                    <h3>LIPSTRIO</h3>
+                    </div>
+                    <div>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANoAAADnCAMAAABPJ7iaAAAAeFBMVEX///8AAABPT08RERHt7e3V1dVjY2Pa2tqAgIB4eHj7+/spKSmpqamurq5paWlsbGwzMzNISEi7u7tcXFyUlJSenp7R0dHFxcXo6OhXV1fj4+O1tbXx8fGGhoYUFBQfHx+Ojo4vLy86Ojpzc3MiIiLBwcEyMjKbm5siucIeAAAEqUlEQVR4nO3d2XLiMBBGYRMSFicYCGvYl8nw/m84pKjJQloWajWttus/1zMqfTFxbCPbWUa0WHaK4aDZ0G+zHXZ3vSdqUgK9jhKQritm4q58nBr12SQXlZ1Se370IgebblNjrhrMhWR2PotfLUVkFvYev+sIyIapEY6KaNlbaoKzfqSsnxpQ0i5KNkk9/dJeI2Tt1JP3tOLT9qnn7mnElr2knro37hFlnnri/gZMmu19yKUpj5bivCw03m/bNPW0b+qRQ+uknvVN9Ti0P47BNtumflvXb0eLIXukh+osOD8mgdoFPSHGUDNyIOYeSaRXckaMs1Jy1/8uP+GAyEMIxl9tai/CP7CR6UDMiXGhhDqdkb9SFha12cbhw7SIYVh/RAR7Iua0Cx/mwSCNOsliXCShaFLXyLhRW60bPozFrQaaL9BUA80XaKqB5gs01UDzZZFGHR6npK3aYlGXEIoF/W8X7slK0NqTo+u6mEqtCbmIJpo231lYuNA8tqVpbTvfFB+ur3tE0Va2vige/rx4GkNbqk/e106I1lWfub/ht5VdfJrNlSabr8lzaflee9K39nnRiksbqE/55v4vWGDSbK7ourSPollchfdVEUGzvoZmyaftlacaXM6l9dSnGtqaS1OfaXgrHs3+RrsccTFo1JeW5mLRFurT5DTj0GzdDODqyKG5Dovfui39jo5lJo0th0YPJXgrRWCOs8bHcBp1kbDRSLU46KMVec1pFk4jF+OkXB2UZXP6YxRMo/YiqdfQUOt61uG0NfEfYparS0RfSReh/b4GqBu1PLAfTqM2/r3ugLw1ivYA2rdAUw000EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00EDTCTTQQNMJNNBA0wk00CpKK32ZS3Vo1HOLa7LVqOdQ1YRGPeG39B1l1aFRj+p5KxumOjTyPW5lLxevDo1+IWDJ06OqQ1uRtMboPNucqkK07C9tC8oojdqP1IQm8QxjozTn62BrQBN4IK5VmsBbpc3S4jebWVr8s/nt0qKfZGyXRh9I1oOWHetLI0+2a0KLs9mmRb1QxzgtZl9inZYt2Oc35mmOF9XXg5blJ9YBZRVo594Z+5OK0M4tluPR8PBMR23W6tBKozYqaHcLNF+gqQaaL9BUA80XaKqB5gs01UDzBZpqoPkCTTXQfIGmGmi+QFMNNF+gqQaarxrTqFWvFmn98GF2xDDp3gN+iVr23g0fhvoq/yA/26BaxJzW4cOQNwak3WxSU6JXGJbdz3Hv6LswZoyRyIEaRap3Zrf79IRWjLGcC9U2Tf02rsnsOT+m2HWhOjH2Ilk2Tz3rm5pyaJHLQnXasmSOPZKtuH+NJG6eunNMWQU2G/8QYpR66p5Ye/5LjlsVzRRz+GD7IzmJkNGnNlYaRcmyzHHkZiDG6fVV1BMGLBQvi7vn4X61BGQid2KKdxKRnc9KD6klVz0LXn/i3vNwn+J2+tfl49Sez065qOyjd+p6knatkgdSRDXtrYvB1nkyf8eag2GxXi6oSf0D9/B2E5bnHu8AAAAASUVORK5CYII=" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
