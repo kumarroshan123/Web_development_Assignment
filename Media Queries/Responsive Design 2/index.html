@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design</title>
+    <style>
+        .container{
+            position: absolute;
+            left: 0px; 
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-areas: "one two"
+                                 "one two"
+                                 "three three";
+        }
+        .box1{
+            grid-area: one;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(5, 5, 132);
+        }
+        .box1 img{
+            width: 300px;
+            height: 300px;
+            
+        }
+        .box2{
+            grid-area: two;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(83, 83, 220);
+        }
+        .box2{
+            display: flex;
+            align-items: start;
+            justify-content: space-around;
+            
+        }
+        .box2 div{
+            margin-top: 100px;
+        }
+        .box3{
+            grid-area: three;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: rgb(64, 61, 61);
+            border-top: 1px solid white;
+        }
+        p{
+            font-size: large;
+            color: white;
+        }
+        h2{
+            color:white;
+            font-size: 2.5em;
+        }
+        .box3 img{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        .container1{
+            display: flex;
+            align-items: center;
+            column-gap: 25px;
+            position: relative;
+            left: 30px;
+        }
+        .container2{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .line{
+            border-left: 3px solid black ;
+            height: 16px;
+        }
+        a{
+            color: white;
+        }
+        .box4{
+            display: none;
+        }
+        @media all and (min-width:480px) and (max-width:720px){
+            .container{
+                grid-template-areas: "two"
+                "two"
+                 "one"
+                 "three";
+            }
+            .box2 div{
+                margin-top: -20px;
+            }
+            p{
+                font-size:0.7rem;
+            }
+            .box1 img{
+                width: 150px;
+                height: 150px;
+                padding: 20px 0px;
+            }
+            .container1{
+                display: none; 
+            }
+            .container2 {
+                grid-column: span 2;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                padding: 0 20px;
+}
+
+            .box3 p{
+                font-size: 0.7rem;
+            }
+            a{
+                font-size: 0.7rem;
+            }
+        }
+        .box4{
+            display: none;
+        }
+        @media all and (max-width:480px){
+            .container{
+                grid-template-areas: "three"
+                "two"
+                "two"
+                "two"
+                "one"
+                "one";
+            }
+            .box4{
+                display: flex;
+                flex-direction: column;
+                justify-content: space;
+                align-items: start;
+                grid-area: two;
+                background-color: rgb(83, 83, 220);
+                padding: 15px;
+            }
+            .box5{
+                display: flex;
+                justify-content: space-around;
+            }
+            .box3{
+                border-top: none;
+            }
+            .container1{
+                display: none;
+            }
+            .box2{
+                display: none;
+            }
+            .box1{
+                padding-top:5px ;
+                padding-bottom: 5px;
+            }
+            .box1 img{
+                width: 120px;
+                height: 120px;
+            }
+            p{
+                font-size: 0.7rem;
+            }
+            h2{
+                font-size: 1.5em;
+            }
+            .container2 {
+                    grid-column: span 2; 
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    padding: 0px 20px; 
+                    font-size: 0.5rem;
+                    border-bottom: 1px solid white;        
+        }
+        .s{
+            margin-left: 350px;
+        }
+        .se{
+            margin-left: 353.5px;
+        }
+        .a{
+            margin-left: 344.5px;
+        }
+        .h{
+            margin-left: 351.5px;
+        }
+
+        
+
+    }
+
+        /* .box1 img{
+            /* width: 200px;
+            height: 200px;
+            position: relative;
+            top: 100px;
+            left: 70px;
+  */
+        /* }
+        .container1 img{
+            width: 40px;
+            height: 40px;
+        }
+        .box1{
+            grid-area: one;
+            border: 2px solid black;
+        }
+        .box2{
+            grid-area: two;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            
+        }
+        .box3{
+            grid-area: three;
+            border: 2px solid black;
+            display: flex;
+            justify-content: space-around;
+        }
+        .box3 div{
+            display: flex;
+            justify-content: center;
+        }
+        .box2 div{
+            border: 2px solid black;
+            /* width:200px ;
+            height: 500px; */
+            /* position: relative;
+            left: 50px;
+            display: flex;
+            flex-direction: column;   
+            
+        } */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6LoQlcOhjhgqSw7kh5AB2WPqWYQzTfYAgINqZOSVpTQyPtcJnGheF9Nu_yqhlcA8ec3U&usqp=CAU" alt="">
+        </div>
+        <div class="box2">
+            <div class="shop">
+                <h2>Shop</h2>
+                <p>Gifts cards</p>
+                <p>Etsy Registry</p>
+                <p>Sitemap</p>
+                <p>Etsy blog</p>
+                <p>Etsy United Kingdom</p>
+                <p>Etsy Germany</p>
+                <p>Etsy Canada</p>
+            </div>
+            <div class="sell">
+                <h2>Sell</h2>
+                 <p>Sell on Etsy</p>
+                 <p>Teams</p>
+                 <p>Forums</p>
+                 <p>affiliates & Creators</p>
+            </div>
+            <div class="about">
+                <h2>About</h2>
+                 <p>Etsy, Inc.</p>
+                 <p>Policies</p>
+                 <p>Investors</p>
+                 <p>Careers</p>
+                 <p>Press</p>
+                 <p>Impact</p>
+                 <p>Legal imprint</p>
+            </div>
+            <div class="shop">
+                <h2>Shop</h2>
+                  <p>Gift cards</p>
+                  <p>Etsy Registry</p>
+                  <p>Sitemap</p>
+                  <p>Etsy blog</p>
+                  <p>Etsy United Kingdom</p>
+                  <p>Etsy Germany</p>
+                  <p>Etsy Canada</p>
+            </div>
+        </div>
+    
+        <div class="box3">
+            <div class="container1">
+                <img src="https://t3.ftcdn.net/jpg/06/12/34/84/360_F_612348476_k3i3brMUOo3N9Wk3yoceMHqZ8w4jpFqu.jpg" alt="">
+                <p><b>India</b></p>
+                <div class="line">
+
+                </div>
+                <p><b>English (IN)</b></p>
+                <div class="line"></div>
+                <p><b>&#x20b9; (INR)</b></p>
+            </div>
+            <div class="container2">
+                <p>&copy; 2024 Etsy, Inc.</p>
+                <a href="">Terms of Use</a>
+                <a href="">Privacy</a>
+                <a href="">Interest-based ads</a>
+                <a href="">Local Shops</a>
+                <a href="">Regions </a>
+            </div>
+        </div>
+        <div class="box4">
+            <div class="box5">
+                <p><b>Shop</b></p>
+                <p class="s">&or;</p>
+            </div>
+            <div class="box5">
+                <p><b>Sell</b>l</p>
+                <p class="se">&or;</p>
+            </div>
+            <div class="box5">
+                <p><b>About</b></p>
+                <p class="a">&or;</p>
+            </div>
+            <div class="box5">
+                <p><b>Help</b></p>
+                <p class="h">&or;</p>
+            </div>
+            <div class="box5">
+                <p><b>Help Centre</b></p>
+            </div>
+            <div class="box5">
+                <p><b>Privacy settings</b></p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
