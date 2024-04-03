@@ -1,0 +1,60 @@
+.main {
+    margin-top: 50px;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+  }
+  header {
+    
+    font-size: x-large;
+    font-weight: bolder;
+  }
+  .contact {
+    text-align: center;
+    font-size: x-large;
+    color: rgb(92, 89, 89);
+    height: 500px;
+  }
+  #symbol{
+    height: 160px;
+    width: 150px;
+    margin-top: 30px;
+  }
+  #link {
+    color: rgb(90, 87, 87);
+    font-weight: bolder;
+    font-size: xx-large;
+  }
+  hr {
+    border: rgb(236, 230, 230) solid 1px;
+    width: 1270px
+  }
+  #icon{
+    height: 15px;
+    margin: 5px 15px 5px 15px;
+    /* border: 2px solid rgb(16, 15, 15); */
+  }
+  a{
+    color: rgb(9, 125, 227);
+  }
+  .last{
+    padding-left: 150px;
+    text-align:left;
+    color: rgb(92, 89, 89);
+  }
+  #register{
+    font-weight: bolder;
+    font-size: small;
+    margin-left: 80px;
+  }
+  #reglink{
+    color: red;
+    text-decoration: none;
+  }
+  .lastp{
+    margin-right: 150px;
+    /* border:2px solid black */
+  }
+  .last{
+    display:flex ;
+  }

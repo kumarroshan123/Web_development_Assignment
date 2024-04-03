@@ -1,0 +1,9 @@
+#list1 > li:nth-child(1n) {
+    color: red;
+}
+#list1 > li:nth-child(2n) {
+    color: black;
+}
+ul + ul > li::marker {
+    color: rgb(229, 12, 197);
+}
