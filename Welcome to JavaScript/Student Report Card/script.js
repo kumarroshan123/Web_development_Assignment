@@ -1,0 +1,17 @@
+var studentName= "Kumar Roshan" , school="Saint Joseph's School" , grade= 10, section='B' , rollno=21 , computer=96 , mathematics =91, science=82;
+console.log("-----------", school, "------------");
+console.log("               Report Card");
+console.log(" ");
+console.log("Student Name :- ", studentName);
+console.log("Grade :-", grade);
+console.log("Section :-", section);
+console.log("Roll Number :-", rollno);
+console.log(" ");
+console.log("SUBJECT                MARKS");
+console.log("----------            --------");
+console.log("COMPUTER                ", computer);
+console.log("MATHEMATICS             ", mathematics);
+console.log("SCIENCE                 ", science);
+console.log("----------            --------");
+console.log("TOTAL                   ", computer + mathematics + science);
+console.log("PERCENTAGE              ", Math.round(((computer + mathematics + science) / 300) * 100, 2),"%");
