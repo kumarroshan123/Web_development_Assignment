@@ -1,0 +1,434 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.main {
+  margin: auto;
+  padding: auto;
+  max-width: 1920px;
+}
+.frame {
+  width: 1920px;
+  height: 860px;
+  gap: 0px;
+  opacity: 0px;
+}
+.header {
+  width: 1320px;
+  height: 88px;
+  position: absolute;
+  left: 300px;
+  padding: 21.94px 15px 21.93px 15px;
+  gap: 0px;
+  opacity: 0px;
+}
+.header_logo {
+  width: 808.84px;
+  height: 44.13px;
+  position: absolute;
+  top: 21.94px;
+  left: 15px;
+  gap: 0px;
+  opacity: 0px;
+}
+.logo-1 {
+  width: 167px;
+  height: 32px;
+  top: 6.06px;
+  gap: 0px;
+  opacity: 0px;
+}
+.logo-1 > img:nth-child(1) {
+  width: 10.6px;
+  height: 10.28px;
+  position: absolute;
+  top: 0.45px;
+  left: 14.43px;
+  gap: 0px;
+  opacity: 0px;
+}
+.logo-1 > img:nth-child(2) {
+  width: 40.03px;
+  height: 24.54px;
+  position: absolute;
+  top: 6.9px;
+  gap: 0px;
+  opacity: 0px;
+}
+.logo-1 > img:nth-child(3) {
+  width: 15.6px;
+  height: 14.88px;
+  position: absolute;
+  top: 12.17px;
+  left: 50px;
+  gap: 0px;
+  opacity: 0px;
+}
+.logo-1 > img:nth-child(4) {
+  width: 4.8px;
+  height: 21.6px;
+  position: absolute;
+  top: 5.45px;
+  left: 67.7px;
+  gap: 0px;
+  opacity: 0px;
+}
+.logo-1 > img:nth-child(5) {
+  width: 14.1px;
+  height: 15.6px;
+  position: absolute;
+  top: 11.81px;
+  left: 75.57px;
+  gap: 0px;
+  opacity: 0px;
+}
+.logo-1 > img:nth-child(6) {
+  width: 10.41px;
+  height: 18.87px;
+  position: absolute;
+  top: 8.18px;
+  left: 92.05px;
+  gap: 0px;
+  opacity: 0px;
+}
+.logo-1 > img:nth-child(7) {
+  width: 15.24px;
+  height: 15.6px;
+  position: absolute;
+  top: 11.81px;
+  left: 104.9px;
+  gap: 0px;
+  opacity: 0px;
+}
+.logo-1 > img:nth-child(8) {
+  width: 14.55px;
+  height: 15.24px;
+  position: absolute;
+  top: 12.17px;
+  left: 123.33px;
+  gap: 0px;
+  opacity: 0px;
+}
+.logo-1 > img:nth-child(9) {
+  width: 9.27px;
+  height: 15.24px;
+  position: absolute;
+  top: 11.81px;
+  left: 141.83px;
+  gap: 0px;
+  opacity: 0px;
+}
+.logo-1 > img:nth-child(10) {
+  width: 13.17px;
+  height: 15.6px;
+  position: absolute;
+  top: 11.81px;
+  left: 152.91px;
+  gap: 0px;
+  opacity: 0px;
+}
+.desktopNav {
+  width: 611.84px;
+  height: 44.13px;
+  position: absolute;
+  left: 197px;
+  top: 0px;
+  gap: 0px;
+  opacity: 0px;
+}
+.desktopNav > .desktopNav_item:nth-child(1) {
+  width: 101px;
+  height: 44.13px;
+  padding: 8px 19.8px 8px 20px;
+  gap: 0px;
+  border-radius: 100px;
+  opacity: 0px;
+}
+.desktopNav > .desktopNav_item:nth-child(1) > a {
+  width: 41.2px;
+  height: 28.13px;
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Inter, sans-serif;
+  font-size: 14.77px;
+  font-weight: 400;
+  line-height: 28.13px;
+  text-align: left;
+  text-decoration: none;
+  color: rgba(235, 102, 43, 1);
+  cursor: pointer;
+}
+.desktopNav > .desktopNav_item:nth-child(1) > div {
+  width: 15.2px;
+  height: 15px;
+  position: absolute;
+  top: 14.56px;
+  left: 66px;
+  gap: 0px;
+  opacity: 0px;
+}
+.desktopNav > .desktopNav_item:nth-child(2) {
+  width: 90.11px;
+  height: 44.13px;
+  position: absolute;
+  left: 101px;
+  top: 0px;
+  padding: 8px 19.8px 8px 20px;
+  gap: 0px;
+  border-radius: 100px;
+  opacity: 0px;
+}
+.desktopNav > .desktopNav_item:nth-child(2) > a {
+  width: 30.31px;
+  height: 28.13px;
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Inter, sans-serif;
+  font-size: 14.3px;
+  font-weight: 400;
+  line-height: 28.13px;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  color: rgba(5, 7, 60, 1);
+}
+
+.desktopNav > .desktopNav_item:nth-child(2) > div {
+  width: 15.2px;
+  height: 15px;
+  position: absolute;
+  top: 14.56px;
+  left: 55.11px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.desktopNav > .desktopNav_item:nth-child(3) {
+  width: 119.08px;
+  height: 44.13px;
+  position: absolute;
+  left: 191.11px;
+  top: 0px;
+  padding: 8px 19.8px 8px 20px;
+  gap: 0px;
+  border-radius: 100px;
+  opacity: 0px;
+}
+
+.desktopNav > .desktopNav_item:nth-child(3) > a {
+  width: 79.28px;
+  height: 28.13px;
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Inter, sans-serif;
+  font-size: 14.77px;
+  font-weight: 400;
+  line-height: 28.13px;
+  text-align: left;
+  text-decoration: none;
+  color: rgba(5, 7, 60, 1);
+  cursor: pointer;
+}
+.desktopNav > .desktopNav_item:nth-child(4) {
+  width: 104.45px;
+  height: 44.13px;
+  position: absolute;
+  left: 310.19px;
+  top: 0px;
+  padding: 8px 19.8px 8px 20px;
+  gap: 0px;
+  border-radius: 100px;
+  opacity: 0px;
+}
+
+.desktopNav > .desktopNav_item:nth-child(4) > a {
+  width: 64.65px;
+  height: 28.13px;
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Inter, sans-serif;
+  font-size: 14.88px;
+  font-weight: 400;
+  line-height: 28.13px;
+  text-align: left;
+  text-decoration: none;
+  color: rgba(5, 7, 60, 1);
+  cursor: pointer;
+}
+.desktopNav > .desktopNav_item:nth-child(5) {
+  width: 100.64px;
+  height: 44.13px;
+  position: absolute;
+  left: 414.64px;
+  top: 0px;
+  padding: 8px 19.8px 8px 20px;
+  gap: 0px;
+  border-radius: 100px;
+  opacity: 0px;
+}
+
+.desktopNav > .desktopNav_item:nth-child(5) > a {
+  width: 40.84px;
+  height: 28.13px;
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Inter, sans-serif;
+  font-size: 13.95px;
+  font-weight: 400;
+  line-height: 28.13px;
+  text-align: left;
+  text-decoration: none;
+  color: rgba(5, 7, 60, 1);
+  cursor: pointer;
+}
+
+.desktopNav > .desktopNav_item:nth-child(5) > div {
+  width: 15.2px;
+  height: 15px;
+  position: absolute;
+  top: 14.56px;
+  left: 65.64px;
+  gap: 0px;
+  opacity: 0px;
+}
+.desktopNav > .desktopNav_item:nth-child(6) {
+  width: 96.56px;
+  height: 44.13px;
+  position: absolute;
+  left: 515.28px;
+  top: 0px;
+  padding: 8px 19.8px 8px 20px;
+  gap: 0px;
+  border-radius: 100px;
+  opacity: 0px;
+}
+
+.desktopNav > .desktopNav_item:nth-child(6) > a {
+  width: 56.76px;
+  height: 28.13px;
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 28.13px;
+  text-align: left;
+  text-decoration: none;
+  color: rgba(5, 7, 60, 1);
+  cursor: pointer;
+}
+.header_right {
+  width: 367.92px;
+  height: 44px;
+  position: absolute;
+  top: 22px;
+  left: 937.08px;
+  gap: 0px;
+  opacity: 0px;
+}
+.headerDropdown_button {
+  width: 91.86px;
+  height: 42.13px;
+  position: absolute;
+  top: 0.94px;
+  left: 30px;
+  padding: 11px 19.8px 11.13px 20px;
+  gap: 0px;
+  border-radius: 200px;
+  opacity: 0px;
+}
+.headerDropdown_button > p {
+  width: 29.06px;
+  height: 20px;
+  position: absolute;
+  top: 6.5px;
+  left: 20px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Inter, sans-serif;
+  font-size: 13.83px;
+  font-weight: 400;
+  line-height: 28.13px;
+  text-align: left;
+  text-decoration: none;
+  color: rgba(5, 7, 60, 1);
+}
+.headerDropdown_button > div {
+  width: 18.2px;
+  height: 18px;
+  position: absolute;
+  top: 12.06px;
+  left: 53.86px;
+  gap: 0px;
+  opacity: 0px;
+}
+.header_right > a:nth-child(2) {
+  width: 31.68px;
+  height: 28.13px;
+  position: absolute;
+  top: 7.94px;
+  left: 141.86px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Inter, sans-serif;
+  font-size: 14.53px;
+  font-weight: 400;
+  line-height: 28.13px;
+  text-align: left;
+  text-decoration: none;
+  color: rgba(5, 7, 60, 1);
+  cursor: pointer;
+}
+.header_right > a:nth-child(3) {
+  width: 51.47px;
+  height: 28.13px;
+  position: absolute;
+  top: 7.94px;
+  left: 203.34px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Inter, sans-serif;
+  font-size: 14.53px;
+  font-weight: 400;
+  line-height: 28.13px;
+  text-align: left;
+  text-decoration: none;
+  color: rgba(5, 7, 60, 1);
+  cursor: pointer;
+}
+
+.header_right > button {
+  width: 83.31px;
+  height: 44px;
+  position: absolute;
+  left: 284.61px;
+  padding: 12px 20.8px 12px 21px;
+  gap: 0px;
+  border-radius: 200px;
+  border: 1px solid;
+  opacity: 0px;
+  font-family: Inter, sans-serif;
+  font-size: 13.65px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+}
