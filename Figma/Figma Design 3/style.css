@@ -11,13 +11,15 @@
 .frame {
   width: 1920px;
   height: 860px;
+  position: relative;
   gap: 0px;
   opacity: 0px;
+  background: url("https://s3-alpha-sig.figma.com/img/e4e9/4bcd/6013879f33e24c0450bcde15d215f8ae?Expires=1714348800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=OWEsbJ1aDnsdDYj0aB312ZVoTXOFfnmJ7fnaHDYJbP2335Z123wL74Cv2-oKdbgfyJvenyaE-MH4ibAviVb5vnw~l8QieYN-MkNszgFeBmnp0HvzczzPaPeLNYe9YbTQ1eJRlQTptxeglh1qxCDNMdvxJssQqPY4tWxC3Omj5uvDhlYLpgScU4xow37GSOliBmYNEXdTTq9PBtvkVPOfe1rglZLkKQEvlm0aVRXB~-5G78gP4oBmEBQVm3dm0VNGkHeTfv~3LxSkCV39C0LAfaSP-nK0GnORxkt6FmdvyBZaPFQxegBSwnIX36qEY~6J2GnpcLhreGV~dd9oTGoOXw__");
 }
 .header {
   width: 1320px;
   height: 88px;
-  position: absolute;
+  position: relative;
   left: 300px;
   padding: 21.94px 15px 21.93px 15px;
   gap: 0px;
@@ -415,7 +417,6 @@
   color: rgba(5, 7, 60, 1);
   cursor: pointer;
 }
-
 .header_right > button {
   width: 83.31px;
   height: 44px;
@@ -431,4 +432,261 @@
   font-weight: 500;
   text-align: center;
   cursor: pointer;
+}
+.frame1 {
+  width: 880px;
+  height: 254px;
+  position: absolute;
+  top: 147px;
+  left: 507px;
+  padding: 0px 15px 0px 15px;
+  gap: 0px;
+  opacity: 0px;
+}
+.frame1 > h1 {
+  width: 664px;
+  height: 151px;
+  position: absolute;
+  top: -4px;
+  left: 108.09px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Inter, sans-serif;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 72px;
+  text-align: center;
+  background-image: linear-gradient(90.84deg, #ee8c61 27.01%, #4c43c4 87.3%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.searchForm {
+  width: 850px;
+  height: 80px;
+  position: absolute;
+  box-sizing: border-box;
+  top: 174px;
+  left: 15px;
+  padding: 10px;
+  gap: 0px;
+  border-radius: 200px;
+  opacity: 0px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
+}
+.searchForm_form {
+  width: 768px;
+  height: 60px;
+  position: absolute;
+  box-sizing: border-box;
+  top: 10px;
+  left: 10px;
+  padding: 5px 10px 5px 10px;
+  gap: 0px;
+  opacity: 0px;
+}
+.searchForm_form > div:nth-child(1) {
+  width: 249.33px;
+  height: 50px;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  padding: 0px 60.97px 0px 0px;
+  gap: 0px;
+  opacity: 0px;
+}
+.searchForm_form > div:nth-child(1) > div:nth-child(1) {
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 15px 14.8px 15px 15px;
+  gap: 0px;
+  border-radius: 50px;
+  opacity: 0px;
+  background-color: rgba(235, 102, 43, 0.05);
+}
+
+.searchForm_form > div:nth-child(1) > div:nth-child(2) {
+  width: 128.36px;
+  height: 43.59px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 3.2px;
+  left: 60px;
+  padding: 0px 0px 1.59px 0px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.searchForm_form > div:nth-child(1) > div:nth-child(2) > h5 {
+  width: 46.67px;
+  height: 24px;
+  position: absolute;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Inter, sans-serif;
+  font-size: 14.88px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: rgba(5, 7, 60, 1);
+}
+
+.searchForm_form > div:nth-child(1) > div:nth-child(2) > p {
+  width: 128.56px;
+  height: 18px;
+  position: absolute;
+  top: 24px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Inter, sans-serif;
+  font-size: 13.67px;
+  font-weight: 400;
+  line-height: 19.6px;
+  text-align: left;
+  color: rgba(113, 113, 113, 1);
+}
+.searchForm_form > div:nth-child(2) {
+  width: 249.33px;
+  height: 50px;
+  position: absolute;
+  top: 5px;
+  left: 259.33px;
+  padding: 0px 18.33px 0px 0px;
+  gap: 0px;
+  opacity: 0px;
+}
+.searchForm_form > div:nth-child(2) > div:nth-child(1) {
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 15px 14.8px 15px 15px;
+  gap: 0px;
+  border-radius: 50px;
+  opacity: 0px;
+  background-color: rgba(235, 102, 43, 0.05);
+}
+
+.searchForm_form > div:nth-child(2) > div:nth-child(2) {
+  width: 171px;
+  height: 45.59px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 2.2px;
+  left: 60px;
+  padding: 0px 0px 1.59px 0px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.searchForm_form > div:nth-child(2) > div:nth-child(2) > h5 {
+  width: 41.31px;
+  height: 24px;
+  position: absolute;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Inter, sans-serif;
+  font-size: 14.88px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: rgba(5, 7, 60, 1);
+}
+
+.searchForm_form > div:nth-child(2) > div:nth-child(2) > .input {
+  width: 175.55px;
+  height: 19.59px;
+  position: absolute;
+  top: 25px;
+  left: 2px;
+  box-sizing: border-box;
+  padding: 0px 23.71px 1.59px 0px;
+  gap: 0px;
+  opacity: 0px;
+}
+.searchForm_form > div:nth-child(2) > div:nth-child(2) > .input > p {
+  width: 151.84px;
+  height: 18px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Inter, sans-serif;
+  font-size: 13.34px;
+  font-weight: 400;
+  line-height: 19.6px;
+  text-align: left;
+  color: rgba(0, 0, 0, 1);
+}
+.searchForm_form > div:nth-child(3) {
+  width: 249.33px;
+  height: 50px;
+  position: absolute;
+  top: 5px;
+  left: 508.66px;
+  box-sizing: border-box;
+  padding: 0px 60.97px 0px 0px;
+  gap: 0px;
+  opacity: 0px;
+}
+.searchForm_form > div:nth-child(3) > div:nth-child(1) {
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 15px 14.8px 15px 15px;
+  gap: 0px;
+  border-radius: 50px;
+  opacity: 0px;
+  background-color: rgba(235, 102, 43, 0.05);
+}
+
+.searchForm_form > div:nth-child(3) > div:nth-child(2) {
+  width: 69.19px;
+  height: 43.59px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 3.2px;
+  left: 60px;
+  padding: 0px 0px 1.59px 0px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.searchForm_form > div:nth-child(3) > div:nth-child(2) > h5 {
+  width: 69.39px;
+  height: 24px;
+  position: absolute;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Inter, sans-serif;
+  font-size: 14.41px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: rgba(5, 7, 60, 1);
+}
+
+.searchForm_form > div:nth-child(3) > div:nth-child(2) > p {
+  width: 46.26px;
+  height: 18px;
+  position: absolute;
+  top: 24px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Inter, sans-serif;
+  font-size: 13.78px;
+  font-weight: 400;
+  line-height: 19.6px;
+  text-align: left;
+  color: rgba(113, 113, 113, 1);
+}
+.searchForm > .button {
+  width: 62px;
+  height: 60px;
+  position: absolute;
+  top: 10px;
+  left: 778px;
+  gap: 0px;
+  border-radius: 200px;
+  opacity: 0px;
+  background: rgba(235, 102, 43, 1);
 }
