@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #box {
+            width: 200px;
+            height: 200px;
+            border: 2px solid ;
+        } */
+        .card{
+            border: 2px solid rgb(209, 18, 18);
+            padding:16px;
+            width:fit-content;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>/
+    <div class="card">
+        <label >
+            Email:<input type="text">
+        </label>
+        <br>
+        <br>
+        <label >
+            Password:<input type="password">
+        </label>
+        <br>
+        <br>
+        <label >
+            Confirm Password:<input type="password">
+        </label>
+        <br>
+        <br>
+        <button>Submit</button>
+    </div>
+    <!-- <button id="btn">Click Me!</button>
+    <input type="text" id="inp"> -->
+    <!-- <div id="box"></div>
+    <br>
+    <div>
+        <button>Red</button>
+        <button>green</button>
+        <button>blue</button>
+        <button>reset</button>
+    </div> -->
+</body>
+</html>
+<script>
+    const input = document.getElementsByTagName("input");
+    const btn = document.getElementsByTagName("button");
+    // console.dir(btn);
+    const [email,password, confirmpassword]=input;
+    btn.addEventListener("click",() => {
+        if(email.value==="" || password.value==="" || confirmpassword.value===""){
+            alert("All fields are required");
+            return;
+        }
+        if(password.value!==confirmpassword.value){
+            alert("Passwords do not match");
+            return;
+        }
+        alert("Form submitted successfully");
+    });
+    // const d=document.getElementById("box");
+    // d.style.backgroundColor="yellow";
+    
+    // const redbtn=document.querySelector("div > button:nth-child(1)");
+    // const greenbtn=document.querySelector("div > button:nth-child(2)");
+    // const bluebtn=document.querySelector("div > button:nth-child(3)");
+    // const resetbtn=document.querySelector("div > button:nth-child(4)");
+
+    // redbtn.addEventListener("click",() => {
+    //     d.style.backgroundColor="red";
+    // });
+    // greenbtn.addEventListener("click",() => {
+    //     d.style.backgroundColor="green";
+    // });
+    // bluebtn.addEventListener("click",() => {
+    //     d.style.backgroundColor="blue";
+    // });
+    // resetbtn.addEventListener("click",() => {
+    //     d.style.backgroundColor=null;
+    // });
+    // const b= document.getElementById("btn");
+    // b.addEventListener("click",() =>{
+    //     console.log(el.value);
+    // })
+    
+    // const el= document.getElementById("inp");
+    // el.addEventListener("input",() => {
+    //     console.log(el.value);
+    // })
+</script>
