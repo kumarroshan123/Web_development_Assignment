@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://cdn.pixabay.com/photo/2023/02/07/17/49/supercar-7774683_640.jpg" alt="">
+    <span>
+        <h3>like: <span class="likenumber">0</span> </h3>
+        <h3>dislike: <span class="dislikenumber">0</span></h3>
+        <button class="likebtn">Like</button>
+        <button class="dislikebtn">Dislike</button>
+    </span>
+</body>
+</html>
+<script>
+    let likecount = +localStorage.getItem('likecount') || 0;
+    let dislikecount = +localStorage.getItem('dislikecount') || 0;
+    const likebtn = document.querySelector('.likebtn');
+    const dislikebtn = document.querySelector('.dislikebtn');
+    const likenumber = document.querySelector('.likenumber');
+    const dislikenumber = document.querySelector('.dislikenumber');
+
+    likenumber.textContent=likecount;
+    dislikenumber.textContent=dislikecount;
+    
+    likebtn.addEventListener('click', () => {
+        likecount++;
+        likenumber.textContent = likecount;
+        localStorage.setItem("likecount",likecount);
+    });
+    dislikebtn.addEventListener('click', () => {
+        dislikecount++;
+        dislikenumber.textContent = dislikecount;
+        localStorage.setItem("dislikecount", dislikecount);
+    });
+</script>
