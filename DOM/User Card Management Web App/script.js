@@ -254,7 +254,7 @@ function createproductcards(product) {
             <h3>${product.price} $</h3>
             <h4>${product.category}</h4>
             <p class="text">${product.description}</p>
-            <div class="btn"><button class="button">Add To Cart <i class="fa fa-shopping-cart"></i></button></div>
+            <div class="btn"><button class="button"  onclick="addtocart(${product.id})">Add To Cart <i class="fa fa-shopping-cart"></i></button></div>
         </div>`;
 }
 
@@ -315,3 +315,12 @@ sortby.addEventListener('change', function() {
 });
 
 filterProducts(products);
+
+function addtocart(productid){
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let product=products.find((p)=> p.id===productid );
+    
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert("Product added to cart!");
+}

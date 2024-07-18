@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
 
 *{
     margin: 0px;
     padding: 0px;
-    font-family: "Open Sans", sans-serif;
+    font-family:  "Baloo 2", sans-serif;
 }
 header{
     width: auto;
@@ -17,23 +17,23 @@ nav{
     align-items: center;
     width: 100%;
 }
-nav button{
+nav a{
     padding: 10px 20px;
     background-color: rgb(251, 253, 253);
     color: grey;
     border-radius: 5px;
-    border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    text-decoration: none;
 }
 nav img{
     width: 100px;
     height: 60px;
 }
-a{
+p a{
     text-decoration: none;
     color: black;
     font-size: 20px;
+    background-color:rgb(236, 230, 230);
 }
 nav > div{
     display: flex;

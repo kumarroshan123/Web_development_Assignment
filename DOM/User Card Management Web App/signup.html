@@ -1,0 +1,9 @@
+document.addEventListener("DOMContentLoaded", () => {
+    let productsContainer = document.getElementsByClassName("product");
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    if (cart.length === 0) {
+      productsContainer.innerhtml = "<p>No products added to cart</p>";
+      return;
+    }
+  });
+  
