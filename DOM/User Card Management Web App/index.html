@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Page</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX8gvLcCw9N9k9h9l1MkPpC5M-mHDH12aVGg&s" alt="">
+        <p><a href="#">Home</a></p>
+        <p><a href="#">Products</a></p>
+        <p><a href="#">About</a></p>
+        <p><a href="#">Contact</a></p>
+        <div>
+        <label>Category:</label>
+        <select id="category">
+          <option value="all">All</option>
+          <option value="men's clothing">Men's Clothing</option>
+          <option value="jewelery">Jewelery</option>
+          <option value="electronics">Electronics</option>
+          <option value="women's clothing">Women's Clothing</option>
+        </select>
+        <label>Sort by:</label>
+        <select id="sort">
+            <option value="price-low-high">Price (Low to High)</option>
+            <option value="price-high-low">Price (High to Low)</option>
+        </select>
+        <label for="sort-by">Sort by Popularity:</label>
+        <select name="sort-by" id="sort-by">
+            <option value="none">None</option>
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+        </select>
+        </div>
+        <button>Cart <i class="fa fa-shopping-cart" ></i></button>
+        <div>
+        <button>Sign Up</button>
+        <button>Log In</button>
+      </div>
+      </nav>
+    </header>
+    <div class="container">
+        
+    </div>
+  </body>
+</html>
+<script src="script.js"></script>
