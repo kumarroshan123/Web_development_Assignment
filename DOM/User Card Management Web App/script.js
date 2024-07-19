@@ -329,3 +329,18 @@ function addtocart(productid){
     localStorage.setItem('cart', JSON.stringify(cart));
     alert("Product added to cart!");
 }
+let l=JSON.parse(localStorage.getItem('logined'));
+if (l.login==='true'){
+    let s=document.querySelector('.sign');
+    s.innerHTML=`<p>Welcome ${l.username}!</p>`;
+    let out=document.createElement('button');
+    out.innerHTML='Logout';
+    out.addEventListener('click', function(){
+        localStorage.setItem('logined', JSON.stringify({login: 'false', username: ''}));
+        s.innerHTML=`<div class="sign">
+          <a href="signup.html">Sign Up</a>
+          <a href="login.html">Log In</a>
+        </div>`;
+    });
+    s.append(out);
+}

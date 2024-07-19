@@ -14,7 +14,7 @@ function addtotal(total){
     return `<h1>Total :- $${total}</h1>
          <div>
         <button>Checkout</button>
-        <button>Continue Shopping</button>
+        <button onclick=fn()>Continue Shopping</button>
         </div>`
 }
 function displayProducts() {
@@ -34,6 +34,22 @@ function displayProducts() {
   if (cart.length !== 0) {
     t.innerHTML= addtotal(total);
   }
+  let l=JSON.parse(localStorage.getItem('logined'));
+  if (l.login==='true'){
+    let s=document.querySelector('.sign');
+    s.innerHTML=`<p>Welcome ${l.username}!</p>`;
+    let out=document.createElement('button');
+    out.innerHTML='Logout';
+    out.addEventListener('click', function(){
+        localStorage.setItem('logined', JSON.stringify({login: 'false', username: ''}));
+        s.innerHTML=`<div class="sign">
+            <button>Cart <i class="fa fa-shopping-cart" ></i></button>
+            <button>Sign Up</button>
+            <button>Log In</button>
+          </div>`;
+    });
+    s.append(out);
+}
 }
 
 function removefromcart(product) {
@@ -57,5 +73,13 @@ function addbtn(pid) {
   localStorage.setItem("cart", JSON.stringify(cart));
   displayProducts();
 }
-
+function fn(){
+  window.location.href="index.html";
+}
+function sfn(){
+  window.location.href="signup.html";
+}
+function lfn(){
+  window.location.href="login.html";
+}
 displayProducts();

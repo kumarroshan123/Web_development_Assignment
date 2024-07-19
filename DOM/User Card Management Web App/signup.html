@@ -9,7 +9,7 @@
 <body>
     <div>
         <h1>Sign Up</h1>
-        <form action="/submit-login" method="POST">
+        <form class="signup">
             <label for="username">Username</label>
             <br>
             <input type="text" id="username" name="username" required>
@@ -18,9 +18,10 @@
             <br>
             <input type="password" id="password" name="password" required>
             <br><br>
-            <input type="submit" value="Login">
-            <p>Don't have an account? <a href="login.html">Sign Up</a></p>
+            <button type="submit" id="btn">Log In </button>
+            <p>Already have an account? <a href="login.html">Log In</a></p>
         </form>
     </div>
 </body>
 </html>
+<script src="login.js"></script>
