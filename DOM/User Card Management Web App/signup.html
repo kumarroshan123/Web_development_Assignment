@@ -1,9 +1,26 @@
-document.addEventListener("DOMContentLoaded", () => {
-    let productsContainer = document.getElementsByClassName("product");
-    let cart = JSON.parse(localStorage.getItem("cart"));
-    if (cart.length === 0) {
-      productsContainer.innerhtml = "<p>No products added to cart</p>";
-      return;
-    }
-  });
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div>
+        <h1>Sign Up</h1>
+        <form action="/submit-login" method="POST">
+            <label for="username">Username</label>
+            <br>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Password</label>
+            <br>
+            <input type="password" id="password" name="password" required>
+            <br><br>
+            <input type="submit" value="Login">
+            <p>Don't have an account? <a href="login.html">Sign Up</a></p>
+        </form>
+    </div>
+</body>
+</html>

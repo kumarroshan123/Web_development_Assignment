@@ -319,8 +319,13 @@ filterProducts(products);
 function addtocart(productid){
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let product=products.find((p)=> p.id===productid );
-    
-    cart.push(product);
+    let check = cart.find((p)=> p.id===product.id);
+    if (check){
+        check.quantity++;
+    }
+    else{
+        cart.push({...product,quantity : 1})
+    }
     localStorage.setItem('cart', JSON.stringify(cart));
     alert("Product added to cart!");
 }
