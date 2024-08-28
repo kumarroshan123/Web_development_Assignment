@@ -16,7 +16,7 @@ class UserSerializer(serializers.ModelSerializer):
                 return instance
 
 
-class ProfileSerializer(serializer.ModelSerializer):
+class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model=Profile 
         fields='__all__'
