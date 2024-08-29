@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box</title>
+    <style>
+        .main{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 650px;
+        }
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid red;
+            background-color: yellow;
+            height: 100px;
+            width: 100px;
+            cursor: pointer;
+        }
+        .main > .box:nth-child(3):hover{
+            height: 200px;
+            width: 200px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box">One</div>
+        <div class="box">Two</div>
+        <div class="box">Three</div>
+        <div class="box">Four</div>
+        <div class="box">Five</div>
+    </div>
+</body>
+</html>
