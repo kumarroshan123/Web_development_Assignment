@@ -1,10 +1,12 @@
 from django.shortcuts import render
-from rest_framework.views import APIView,Response
+from rest_framework.views import APIView
+from rest_framework.response import Response
 from rest_framework import status
 from .serializers import UserSerializer,PostSerializer,ProfileSerializer
 from .models import Profile
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
+import jwt,datetime
 # Create your views here.
 
 class  RegisterView(APIView):
@@ -29,11 +31,18 @@ class LoginView(APIView):
         if user is None:
             return Response({'message':'User not Registered, Please Signup'},status=status.HTTP_404_NOT_FOUND)
         
-        if not user.check_password(password=password):
+        if not user.check_password(password):
             return Response({'message':'wrong password, Please try again'}, status=status.HTTP_400_BAD_REQUEST)
-        
         login(request,user)
-        return Response({'message':'Login successful'}, status=status.HTTP_200_OK)
+        #i will create a token here, where i will hide the information of logged in user
+        payload={
+            'id':user.id,
+            'exp':datetime.datetime.now(datetime.UTC)+datetime.timedelta(minutes=60),
+            'iat':datetime.datetime.now(datetime.UTC)
+
+        }
+        token=jwt.encode(payload,'cap1.4b',algorithm='HS256')
+        return Response({'message':'Login successful','token':token}, status=status.HTTP_200_OK)
 
 
 class PostView(APIView):
