@@ -24,15 +24,21 @@ class LoginView(APIView):
         username= request.data.get('username')
         password= request.data.get('password')
 
-        user= User.objects.filter(username=username)
+        user= User.objects.filter(username=username).first()
         
         if user is None:
             return Response({'message':'User not Registered, Please Signup'},status=status.HTTP_404_NOT_FOUND)
         
-        if not user.check_password(password):
+        if not user.check_password(password=password):
             return Response({'message':'wrong password, Please try again'}, status=status.HTTP_400_BAD_REQUEST)
         
         login(request,user)
         return Response({'message':'Login successful'}, status=status.HTTP_200_OK)
 
 
+class PostView(APIView):
+    def post(self,request):
+        serializer=PostSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'message':'Post Added'}, status=status.HTTP_201_CREATED)
