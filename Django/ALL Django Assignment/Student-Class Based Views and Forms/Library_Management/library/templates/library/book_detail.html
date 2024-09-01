@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Detail</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .cover-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px 0;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background-color: #007BFF;
+            color: white;
+        }
+        
+        .btn-success {
+            background-color: #28a745;
+            color: white;
+        }
+        
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+        }
+        
+        .actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ book.title }}</h1>
+        <p>Author: {{ book.author }}</p>
+        <p>Published Date: {{ book.published_date }}</p>
+        <p>ISBN: {{ book.isbn }}</p>
+        <p>Pages: {{ book.pages }}</p>
+        {% if book.cover %}
+            <img src="{{ book.cover }}" alt="{{ book.title }} cover">
+        {% endif %}
+        <div class="actions">
+            <a href="{% url 'book_update' book.pk %}" class="btn btn-success">Edit</a>
+            <a href="{% url 'book_delete' book.pk %}" class="btn btn-danger">Delete</a>
+            <a href="{% url 'book_List' %}" class="btn btn-primary">Back to List</a>
+        </div>
+    </div>
+</body>
+</html>

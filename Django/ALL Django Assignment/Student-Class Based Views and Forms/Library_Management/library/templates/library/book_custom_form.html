@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Book Form</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Custom Book Form</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+        <a href="{% url 'book_List' %}" class="btn btn-secondary">Back to List</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog List</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-top: 20px;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .create-post {
+        margin: 20px 0;
+    }
+    
+    .create-post a {
+        background-color: #007BFF;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    
+    .blog-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+    
+    .blog-item {
+        border-bottom: 1px solid #ddd;
+        padding: 15px 0;
+    }
+    
+    .blog-item a {
+        text-decoration: none;
+        color: #007BFF;
+    }
+    
+    .blog-item a h2 {
+        margin: 5px 0;
+    }
+    
+    .blog-item .actions {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .blog-item .actions a {
+        background-color: #28a745;
+        color: white;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 3px;
+        margin-top: 10px;
+    }
+    
+    .blog-item .actions a.delete {
+        background-color: #dc3545;
+    }
+    
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>List Of The Blog</h1>
+      <div class="create-post">
+        <a href="{% url 'Create_Blog_list' %}">Create Post</a>
+      </div>
+      <div class="blog-list">
+        {% for ele in blog %}
+        <div class="blog-item">
+          <a href="#">
+            <h2>Blog Title : {{ ele.title }}</h2>
+            <h2>Created At: {{ ele.create_at }}</h2>
+          </a>
+          <div class="actions">
+            <a href="{% url 'Update_blog' ele.pk %}">Click here to Update</a>
+            <a href="{% url 'Delete_blog' ele.pk %}" class="delete">Click here to Delete</a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+</body>
+</html>

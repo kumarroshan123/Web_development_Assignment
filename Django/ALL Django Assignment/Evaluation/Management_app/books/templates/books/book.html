@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+</head>
+<body>
+    <h2>Details of the books</h2>
+    <ul>
+        {% for list1 in list2 %}
+        <li>title : {{ list1.title }}</li>
+        <li>author: {{ list1.author }}</li>
+        <li>published_date: {{ list1.published_date }}</li>
+        <li>isbn: {{ list1.isbn }}</li>
+        <li>price: {{ list1.price }}</li>
+        <li>stock: {{ list1.stock }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

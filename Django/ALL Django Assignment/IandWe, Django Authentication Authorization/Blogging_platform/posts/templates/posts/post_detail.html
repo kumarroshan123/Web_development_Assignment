@@ -1,0 +1,79 @@
+<!-- post_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .comment-form {
+            margin-top: 20px;
+        }
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .comments {
+            margin-top: 20px;
+        }
+        .comment {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .comment-author {
+            font-weight: bold;
+        }
+        .comment-content {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.content }}</p>
+
+        <div class="comments">
+            <h2>Comments:</h2>
+            {% for comment in comments %}
+                <div class="comment">
+                    <div class="comment-author">{{ comment.author }}</div>
+                    <div class="comment-content">{{ comment.content }}</div>
+                </div>
+            {% empty %}
+                <p>No comments yet.</p>
+            {% endfor %}
+        </div>
+
+        {% if user.is_authenticated %}
+            <div class="comment-form">
+                <h2>Leave a comment:</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        {% else %}
+            <p><a href="{% url 'login' %}">Log in</a> to leave a comment.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

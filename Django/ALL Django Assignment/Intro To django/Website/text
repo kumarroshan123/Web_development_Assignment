@@ -1,0 +1,20 @@
+1. Describe the purpose of key files: "manage.py', "settings.py', "urls.py', and how they contribute to the project structure.
+ans. 1.manage.py main purpose to run development server and creates new apps within the project.
+2.setting.py used to adding apps which we have created in project.
+3.urls.py used to calling view function that web  requests  and including urls of different apps.
+
+
+2.Discuss Project and App Structure:
+2.1.Write a brief explanation on how projects and apps are structured and managed in Django.
+ans. Django project consists of a collection of settings and configurations that manage one or more apps. Each app is a modular and self-contained unit that handles a specific functionality within the project. 
+
+
+2.2.Describe the benefits of separating functionality into different apps.
+ans. Separating functionality into different apps improves organization, reusability, scalability, team collaboration, separation of concerns, and testing efficiency. This modular approach is a key strength of the Django framework.
+
+3.Explain URL Routing and Views in Django:
+3.1.Write a brief overview of how Django's URL routing and views work together.
+ans.In Django, URL routing and views work together to handle requests. URL routing defines which URL should be handled by which view function. Views contain the logic to process these requests and return the appropriate response, usually by rendering a template.
+
+3.2.Include examples of how URL patterns map to views and how views process and return responses.
+ans.For example, the URL pattern /blog/ might display a list of blog posts, while /blog/1/ shows the details of the first blog post. This way, Django organizes how different web pages are accessed and displayed based on the URLs.

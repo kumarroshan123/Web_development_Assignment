@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px 0;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background-color: #007BFF;
+            color: white;
+        }
+        
+        .btn-success {
+            background-color: #28a745;
+            color: white;
+        }
+        
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+        }
+        
+        .book-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .book-item {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .book-item h2 {
+            margin: 0;
+            color: #007BFF;
+        }
+        
+        .book-item p {
+            margin: 5px 0;
+        }
+        
+        .actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>List of Books</h1>
+        <a href="{% url 'book_Form' %}" class="btn btn-primary">Add New Book</a>
+        <div class="book-list">
+            {% for book in book %}
+            <div class="book-item">
+                <h2><a href="{% url 'book_Detail' book.pk %}">{{ book.title }}</a></h2>
+                <p>Author: {{ book.author }}</p>
+                <p>Published Date: {{ book.published_date }}</p>
+                <div class="actions">
+                    <a href="{% url 'book_update' book.pk %}" class="btn btn-success">Edit</a>
+                    <a href="{% url 'book_delete' book.pk %}" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
