@@ -64,7 +64,10 @@ class PostView(APIView):
         if profile.user_type != 'author':
             return Response({'message':"Unauthorized"}, status=status.HTTP_401_UNAUTHORIZED)
         
+        request.data['author'] = profile.id
+        print(profile.id)
         serializer=PostSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response({'message':'Post Added'}, status=status.HTTP_201_CREATED)
+        return Response({'message':'Something Went Wrong'}, status=status.HTTP_400_BAD_REQUEST)
