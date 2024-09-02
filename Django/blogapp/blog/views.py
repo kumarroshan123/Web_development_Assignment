@@ -42,11 +42,28 @@ class LoginView(APIView):
 
         }
         token=jwt.encode(payload,'cap1.4b',algorithm='HS256')
-        return Response({'message':'Login successful','token':token}, status=status.HTTP_200_OK)
+        response=Response()
+        response.data={'message': 'login successful' , 'token':token}
+        response.status = status.HTTP_200_OK
+        response.set_cookie(
+            key='jwt',
+            value=token,
+            httponly=False,
+            samesite=None,
+            secure=None
+        )
+        return response
+        # return Response({'message':'Login successful','token':token}, status=status.HTTP_200_OK)
 
 
 class PostView(APIView):
     def post(self,request):
+        token= request.COOKIES.get('jwt')
+        payload=jwt.decode(token,'cap1.4b',algorithms=['HS256'])
+        profile = Profile.objects.filter(user=payload['id']).first()
+        if profile.user_type != 'author':
+            return Response({'message':"Unauthorized"}, status=status.HTTP_401_UNAUTHORIZED)
+        
         serializer=PostSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
