@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 import jwt,datetime,django_filters
 from django_filters.rest_framework import DjangoFilterBackend,OrderingFilter
-
+from rest_framework.pagination import PageNumberPagination
 
 # Create your views here.
 
@@ -111,8 +111,12 @@ class PostView(APIView):
        
 class PostFilter(django_filters.FilterSet):
     author = django_filters.CharFilter(field_name='author__user__username', lookup_expr= 'iexact')
+    title= django_filters.CharFilter(field_name='title',lookup_expr='icontains')
     class Meta:
-        fields=['author']
+        fields=['author','title']
+
+class CustomPagination(PageNumberPagination):
+    page_size=2
 
 class PostListView(generics.ListAPIView):
     queryset= Post.objects.all().select_related('author').prefetch_related('author__user')
@@ -121,3 +125,4 @@ class PostListView(generics.ListAPIView):
     filterset_fields=['author','title','published']
     # ordering_fields=['created_at','updated_at']
     filter_set=PostFilter
+    pagination_class=CustomPagination
