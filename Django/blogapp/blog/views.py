@@ -8,7 +8,8 @@ from .models import Profile,Post
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 import jwt,datetime,django_filters
-from django_filters.rest_framework import DjangoFilterBackend
+from django_filters.rest_framework import DjangoFilterBackend,OrderingFilter
+
 
 # Create your views here.
 
@@ -108,9 +109,15 @@ class PostView(APIView):
         post.delete()
         return Response({'message':'Post Deleted',"deleted_post":PostSerializer(post).data}, status=status.HTTP_200_OK)
        
+class PostFilter(django_filters.FilterSet):
+    author = django_filters.CharFilter(field_name='author__user__username', lookup_expr= 'iexact')
+    class Meta:
+        fields=['author']
 
 class PostListView(generics.ListAPIView):
-    queryset= Post.objects.all()
+    queryset= Post.objects.all().select_related('author').prefetch_related('author__user')
     serializer_class=PostSerializer
-    filter_backends= [django_filters.rest_framework.DjangoFilterBackend]
+    filter_backends= [DjangoFilterBackend,OrderingFilter]
     filterset_fields=['author','title','published']
+    # ordering_fields=['created_at','updated_at']
+    filter_set=PostFilter
