@@ -58,27 +58,28 @@ class LoginView(APIView):
 
 class PostView(APIView):
     def post(self,request):
-        token= request.COOKIES.get('jwt')
-        payload=jwt.decode(token,'cap1.4b',algorithms=['HS256'])
-        profile = Profile.objects.filter(user=payload['id']).first()
-        if profile.user_type != 'author':
-            return Response({'message':"Unauthorized"}, status=status.HTTP_401_UNAUTHORIZED)
+        # token= request.COOKIES.get('jwt')
+        # payload=jwt.decode(token,'cap1.4b',algorithms=['HS256'])
+        # profile = Profile.objects.filter(user=payload['id']).first()
+        # if profile.user_type != 'author':
+        #     return Response({'message':"Unauthorized"}, status=status.HTTP_401_UNAUTHORIZED)
         
-        request.data['author'] = profile.id
+        # request.data['author'] = profile.id
         serializer=PostSerializer(data=request.data)
         if serializer.is_valid():
+            serializer.validated_data['author']=request.author #middleware 
             serializer.save()
             return Response({'message':'Post Added'}, status=status.HTTP_201_CREATED)
         return Response({'message':'Something Went Wrong'}, status=status.HTTP_400_BAD_REQUEST)
 
     def put(self,request,*args,**kwargs):
-        token= request.COOKIES.get('jwt')
-        payload=jwt.decode(token,'cap1.4b',algorithms=['HS256'])
-        profile = Profile.objects.filter(user=payload['id']).first()
-        if profile.user_type != 'author':
-            return Response({'message':"Unauthorized"}, status=status.HTTP_401_UNAUTHORIZED)
+        # token= request.COOKIES.get('jwt')
+        # payload=jwt.decode(token,'cap1.4b',algorithms=['HS256'])
+        # profile = Profile.objects.filter(user=payload['id']).first()
+        # if profile.user_type != 'author':
+        #     return Response({'message':"Unauthorized"}, status=status.HTTP_401_UNAUTHORIZED)
         
-        request.data['author'] = profile.id
+        # request.data['author'] = profile.id
         post_id=kwargs.get('pk')
         post=Post.objects.get(id=post_id)
         serializer= PostSerializer(post, data=request.data,partial=True)
@@ -89,11 +90,11 @@ class PostView(APIView):
         return Response({'message':'Something Went Wrong'}, status=status.HTTP_400_BAD_REQUEST)
     
     def delete(self,request,*args,**kwargs):
-        token= request.COOKIES.get('jwt')
-        payload=jwt.decode(token,'cap1.4b',algorithms=['HS256'])
-        profile = Profile.objects.filter(user=payload['id']).first()
-        if profile.user_type != 'author':
-            return Response({'message':"Unauthorized"}, status=status.HTTP_401_UNAUTHORIZED)
+        # token= request.COOKIES.get('jwt')
+        # payload=jwt.decode(token,'cap1.4b',algorithms=['HS256'])
+        # profile = Profile.objects.filter(user=payload['id']).first()
+        # if profile.user_type != 'author':
+        #     return Response({'message':"Unauthorized"}, status=status.HTTP_401_UNAUTHORIZED)
         post_id=kwargs.get('pk')
         post=Post.objects.get(id=post_id)
         post.delete()
