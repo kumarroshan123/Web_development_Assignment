@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from rest_framework import generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -6,7 +7,9 @@ from .serializers import UserSerializer,PostSerializer,ProfileSerializer
 from .models import Profile,Post
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
-import jwt,datetime
+import jwt,datetime,django_filters
+from django_filters.rest_framework import DjangoFilterBackend
+
 # Create your views here.
 
 class  RegisterView(APIView):
@@ -57,6 +60,11 @@ class LoginView(APIView):
 
 
 class PostView(APIView):
+    def get(self,request):
+        posts=Post.objects.all()
+        serializer=PostSerializer(posts,many=True)
+        return Response({'message':"Here is the list of posts",'data':serializer.data},status=status.HTTP_200_OK)
+
     def post(self,request):
         # token= request.COOKIES.get('jwt')
         # payload=jwt.decode(token,'cap1.4b',algorithms=['HS256'])
@@ -100,3 +108,9 @@ class PostView(APIView):
         post.delete()
         return Response({'message':'Post Deleted',"deleted_post":PostSerializer(post).data}, status=status.HTTP_200_OK)
        
+
+class PostListView(generics.ListAPIView):
+    queryset= Post.objects.all()
+    serializer_class=PostSerializer
+    filter_backends= [django_filters.rest_framework.DjangoFilterBackend]
+    filterset_fields=['author','title','published']
