@@ -13,7 +13,7 @@ import jwt,datetime
 class JWTAuthmiddleware:
     def __init__(self,get_response):
         self.get_response = get_response
-        self.excluded_paths = [reverse('login'),reverse('register'),reverse('reset_password')]
+        self.excluded_paths = [reverse('login'),reverse('register'),reverse('reset_password'),reverse('password_reset_confirm'),'/favicon.ico']
 
     def __call__(self,request):
         if request.path in self.excluded_paths or request.path.startswith('/admin/'):

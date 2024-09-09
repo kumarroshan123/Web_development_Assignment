@@ -10,7 +10,7 @@ from django.contrib.auth import authenticate,login,logout
 import jwt,datetime,django_filters
 from django_filters.rest_framework import DjangoFilterBackend,OrderingFilter
 from rest_framework.pagination import PageNumberPagination
-from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.tokens import RefreshToken, AccessToken
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
 from django.core.mail import send_mail
@@ -34,6 +34,18 @@ class PasswordResetRequestView(APIView):
         message = render_to_string('password_reset_email.html', {'user': user, 'domain':current_site, 'token':token})
         send_mail(mail_subject,message,email_from,[email])
         return HttpResponse('Email sent successfully')
+
+
+class PasswordResetConfirmView(APIView):
+    def post(self, request):
+        token = request.query_params.get('token')
+
+        if not token:
+            return Response({'message':"Invalid token, Please use Reset Password again"})
+        
+        access_token = AccessToken(token)
+        user_id = access_token['user_id']
+        user = User.objects.get(id=user_id)
 
         
 
