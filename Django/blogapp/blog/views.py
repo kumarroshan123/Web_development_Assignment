@@ -10,8 +10,26 @@ from django.contrib.auth import authenticate,login,logout
 import jwt,datetime,django_filters
 from django_filters.rest_framework import DjangoFilterBackend,OrderingFilter
 from rest_framework.pagination import PageNumberPagination
+from rest_framework_simplejwt.tokens import RefreshToken
+from django.contrib.sites.shortcuts import get_current_site
+from django.template.loader import render_to_string
 
 # Create your views here.
+class PasswordResetRequestView(APIView):
+    def post(self, request):
+        email=request.data['email']
+        user= User.objects.get(email=email)+
+
+        if not user:
+            return Response({'message':'User not registered, please signup'})
+        
+        refresh = RefreshToken.for_user(user)
+        token = str(refresh.access_token)
+        current_site = get_current_site(request)
+        mail_subject = 'Reset Password'
+        message = render_to_string
+        current_site.domain
+        
 
 class  RegisterView(APIView):
 
