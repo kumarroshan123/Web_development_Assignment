@@ -37,7 +37,7 @@ class PasswordResetRequestView(APIView):
 
 
 class PasswordResetConfirmView(APIView):
-    def post(self, request):
+    def get(self, request):
         token = request.query_params.get('token')
 
         if not token:
@@ -46,7 +46,27 @@ class PasswordResetConfirmView(APIView):
         access_token = AccessToken(token)
         user_id = access_token['user_id']
         user = User.objects.get(id=user_id)
+        return render(request,'password_reset_form.html',{'token':token})
+    
+    def post(self, request):
+        password = request.data['password']
+        confirm_password = request.data['password_confirm']
+        token =request.data['token']
+        
+        if not token:
+            return Response({'message':"Invalid Token, Please use Reset Password again"})
+        
+        access_token = AccessToken(token)
+        user_id = access_token['user_id']
+        user = User.objects.get(id=user_id)
 
+        if password==confirm_password:
+            user.set_password(password)
+            user.save()
+            return Response({'message':"Password reset successfully"})
+        
+        return Response({'message':"Something went wrong"})
+ 
         
 
 class  RegisterView(APIView):
