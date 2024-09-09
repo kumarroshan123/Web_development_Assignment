@@ -14,6 +14,8 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
 from django.core.mail import send_mail
+from django.conf import settings
+from django.http import HttpResponse
 
 # Create your views here.
 class PasswordResetRequestView(APIView):
@@ -28,8 +30,11 @@ class PasswordResetRequestView(APIView):
         token = str(refresh.access_token)
         current_site = get_current_site(request)
         mail_subject = 'Reset Password'
+        email_from = settings.EMAIL_HOST_USER
         message = render_to_string('password_reset_email.html', {'user': user, 'domain':current_site, 'token':token})
-        send_mail(mail_subject,message,"kumar30roshan@gmail.com",[email])
+        send_mail(mail_subject,message,email_from,[email])
+        return HttpResponse('Email sent successfully')
+
         
 
 class  RegisterView(APIView):
