@@ -97,6 +97,7 @@ maintenance(car3, 3000);  // Ford Explorer under maintenance for 3 seconds
 // Using call, apply, and bind for price calculations
 demoDiscount.call(regularCustomer, "SUV", 5);  // Using call for regular customer
 demoDiscount.apply(premiumCustomer, ["Sedan", 3]);  // Using apply for premium customer
+calculateRentalPrice.call(this, "SUV", 10)   // Using call for regular customer
 
 // Bind example for future discount calculation
 let premiumDiscount = demoDiscount.bind(premiumCustomer, "SUV", 7);
