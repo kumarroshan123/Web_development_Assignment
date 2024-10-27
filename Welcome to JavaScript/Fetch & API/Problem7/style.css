@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Baloo+Paaji+2:wght@400..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+body{
+    margin:0px;
+    padding:0px;
+    background-color: black;
+    color: white;
+    font-family: "Baloo Paaji 2", sans-serif;
+}
+.head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main{
+   display:flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   padding: 10px;
+}
+.box{
+  width:25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+img{
+    width: 200px;
+    height: 150px;
+}
+p{
+    font-size: large;
+}
+button{
+    width: 120px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 50px;
+    color: rgb(17, 186, 186);
+    background-color: bisque;
+    border-color: grey;
+}
