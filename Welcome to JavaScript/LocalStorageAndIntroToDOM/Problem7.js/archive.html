@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive Page</title>
+</head>
+<body>
+    <nav>
+        <div>
+          <h2><a href="index.html">Home</a></h2>
+        </div>
+        <div>
+          <h2><a href="archive.html">Archive</a></h2>
+        </div>
+      </nav>
+      <div class="main">
+        <div class="box1">
+          <select name="options" id="priority">
+            <option value="" selected>Select priority</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+          <select name="" id="status">
+            <option value="" selected>Select Status</option>
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+        </select>
+        </div>
+        <div class="box2">
+            <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Restore</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody class="tablebody">
+
+                </tbody>
+              </table>
+        </div>
+      </div>
+</body>
+</html>
+<script src="archive.js"></script>
