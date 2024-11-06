@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo</title>
+  </head>
+  <body>
+    <nav>
+      <div>
+        <h2><a href="index.html">Home</a></h2>
+      </div>
+      <div>
+        <h2><a href="archive.html">Archive</a></h2>
+      </div>
+    </nav>
+    <div class="box-outer">
+      <div class="box1">
+        <div>
+          <input type="text" id="text"/>
+          <select name="options" id="options">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+        </div>
+        <div><button onclick="Addtodo()">Add Todo</button></div>
+      </div>
+      <div class="box2">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Priority</th>
+              <th>Status</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody class="tablebody"></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="script.js"></script>
