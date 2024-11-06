@@ -7,7 +7,7 @@ function Addtodo() {
   let textval = text.value;
   let optionvalue = option.value;
   if (textval) {
-    let obj = { title: textval, priority: optionvalue, status: "Pending" };
+    let obj = { title: textval, priority: optionvalue, status: "Pending🔄" };
     todo.push(obj);
     localStorage.setItem("todo", JSON.stringify(todo));
     display();
@@ -22,10 +22,10 @@ function display() {
     todo.forEach((ele,i) => {
     let body = document.createElement("tr");
     body.innerHTML = `<td>${ele.title}</td>
-              <td>${ele.priority}</td>
+              <td class="${ele.priority}">${ele.priority}</td>
               <td><select id="status-choice${i}">
-            <option value="Completed" ${ele.status==="Completed"? "selected":""}>Completed</option>
-            <option value="Pending" ${ele.status==="Pending"? "selected":""}>Pending</option>
+            <option value="Completed✅" ${ele.status==="Completed✅"? "selected":""}>Completed✅</option>
+            <option value="Pending🔄" ${ele.status==="Pending🔄"? "selected":""}>Pending🔄</option>
           </select></td>
               <td><button onclick="Archieve(${i})">Archieve</button></td>`;
 

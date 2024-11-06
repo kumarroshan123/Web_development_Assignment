@@ -8,9 +8,9 @@ function display(archive){
     archive.forEach((ele,i) => {
     let body = document.createElement("tr");
     body.innerHTML = `<td>${ele.title}</td>
-              <td>${ele.priority}</td>
-              <td>${ele.status}</td>
-              <td><button onclick="restore(${i})">Restore</button></td>
+              <td class="${ele.priority}">${ele.priority}</td>
+              <td class="${ele.status}">${ele.status}</td>
+              <td><button id="btn" onclick="restore(${i})">Restore</button></td>
               <td><button onclick="delet(${i})">Delete</button></td>`;
               tablebody.append(body);
     });
@@ -49,11 +49,11 @@ priority.addEventListener("change",(e)=>{
 
 stat.addEventListener("change",(e)=>{
     priority.value="";
-    if(stat.value==="Pending"){
-        let newstatus= archive.filter((ele)=>ele.status==="Pending");
+    if(stat.value==="Pending🔄"){
+        let newstatus= archive.filter((ele)=>ele.status==="Pending🔄");
         display(newstatus);
-    }else if (stat.value==="Completed"){
-        let newstatus= archive.filter((ele)=>ele.status==="Completed");
+    }else if (stat.value==="Completed✅"){
+        let newstatus= archive.filter((ele)=>ele.status==="Completed✅");
         display(newstatus);
     }else{
         display(archive);

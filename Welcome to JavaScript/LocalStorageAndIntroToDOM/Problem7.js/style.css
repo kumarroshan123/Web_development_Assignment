@@ -1,0 +1,92 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+background-color: rgb(195, 252, 233);
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(56, 149, 124);
+    height: 50px;
+}
+nav div{
+    background-color: none;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.box-outer{
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    gap: 30px;
+}
+
+.box1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+    height: 400px;
+    width: 30%;
+    background-color: rgb(180, 247, 247);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+#text{
+  width: 275px;
+  height: 30px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+.box1 select{
+    height: 30px;
+}
+.box1 button{
+    width: 300px;
+    height: 30px;
+    background-color: rgb(47, 192, 34);
+    border-radius: 5px;
+    border: none;
+}
+
+table, th, td {
+    border: 2px solid rgb(252, 244, 244);
+    border-collapse: collapse; 
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th{
+    background-color: rgb(47, 192, 34);
+}
+
+.High{
+    background-color: red;
+}
+.Medium{
+    background-color: yellow;
+}
+
+table select{
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    appearance: none;
+    padding: 5px;
+}
+
+table button{
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+    padding: 2px;
+}
