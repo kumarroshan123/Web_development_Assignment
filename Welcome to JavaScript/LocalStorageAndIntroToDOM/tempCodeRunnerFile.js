@@ -1,0 +1,1 @@
+let totalSize=files.reduce((a,b)=>{return a+b.size},0);
