@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Length Webpage</title>
+</head>
+<body>
+    <div class="main">
+        <input type="text" id="input" placeholder="Enter The Text">
+        <button id="button">Go</button>
+    </div>
+    <div class="display"></div>
+</body>
+</html>
+<script>
+    let input=document.querySelector("#input");
+    let button=document.querySelector("#button");
+    let display=document.querySelector(".display");
+    
+    button.addEventListener("click",()=>{
+        display.innerHTML="";
+        let len=calculateLength(input.value);
+        let h2=document.createElement("h2");
+        h2.innerHTML=`The Length of given Text is : ${len}`;
+        display.append(h2);
+    })
+
+    function calculateLength(line){
+        let c=0;
+        for(let i=0;i<line.length;i++){
+            if(line[i]!==" "){
+                c=c+1;
+            }
+        }
+        return c;
+    }
+</script>
