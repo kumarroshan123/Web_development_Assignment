@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <label for="category">Category:</label>
+        <select  id="category">
+          <option value="">All</option>
+          <option value="men's clothing">Men's Clothing</option>
+          <option value="jewelery">Jewelery</option>
+          <option value="electronics">Electronics</option>
+          <option value="women's clothing">Women's Clothing</option>
+        </select>
+        <label for="sort-price">Sort by:</label>
+          <select id="sort-price">
+            <option value="">Select</option>
+            <option value="price-low-high">Price (Low to High)</option>
+            <option value="price-high-low">Price (High to Low)</option>
+          </select>
+          <label for="sort-popularity">Sort by Popularity:</label>
+          <select  id="sort-popularity">
+            <option value="">None</option>
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+          </select>
+    </nav>
+    <div class="box"></div>
+</body>
+</html>
+<script src="script.js"></script>
