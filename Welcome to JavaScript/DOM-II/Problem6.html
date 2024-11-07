@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Webpage</title>
+</head>
+<body>
+    <div class="main">
+        <select name="animal" id="animal">
+            <option value="dogs">Dog</option>
+            <option value="cats">Cat</option>
+            <option value="elephants">Elephant</option>
+            <option value="lions">Lion</option>
+        </select>
+    </div>
+    <div class="box">
+        
+    </div>
+</body>
+</html>
+<script>
+    const imageLinks = {
+  dogs: [
+    "https://images.dog.ceo/breeds/briard/n02105251_6387.jpg",
+    "https://images.dog.ceo/breeds/gaddi-indian/Gaddi.jpg",
+    "https://images.dog.ceo/breeds/bulldog-french/n02108915_341.jpg",
+    "https://images.dog.ceo/breeds/shiba/shiba-2.jpg",
+    "https://images.dog.ceo/breeds/terrier-american/n02093428_10908.jpg"
+  ],
+  cats: [
+    "https://api-ninjas.com/images/cats/abyssinian.jpg",
+    "https://api-ninjas.com/images/cats/maine_coon.jpg",
+    "https://api-ninjas.com/images/cats/persian.jpg",
+    "https://api-ninjas.com/images/cats/siamese_cat.jpg",
+    "https://api-ninjas.com/images/cats/ragdoll_cats.jpg"
+  ],
+  elephants: [
+    "https://plus.unsplash.com/premium_photo-1669740462478-135db9b990ea?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZWxlcGhhbnRzfGVufDB8fDB8fHww",
+    "https://plus.unsplash.com/premium_photo-1666755275618-966ecd83bc5e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZWxlcGhhbnRzfGVufDB8fDB8fHww",
+    "https://images.unsplash.com/photo-1521651201144-634f700b36ef?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1517384491025-9132643e876a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fGVsZXBoYW50c3xlbnwwfHwwfHx8MA%3D%3D",
+    "https://plus.unsplash.com/premium_photo-1674381524445-180dda79132e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fGVsZXBoYW50c3xlbnwwfHwwfHx8MA%3D%3D"
+  ],
+  lions: [
+    "https://plus.unsplash.com/premium_photo-1664304310991-b43610000fc2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGlvbnN8ZW58MHx8MHx8fDA%3D",
+    "https://images.unsplash.com/photo-1568265112889-c9d3fc50a281?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGxpb25zfGVufDB8fDB8fHww",
+    "https://images.unsplash.com/photo-1603632088148-3680d7e5dda2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGxpb25zfGVufDB8fDB8fHww",
+    "https://plus.unsplash.com/premium_photo-1666672388644-2d99f3feb9f1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fGxpb25zfGVufDB8fDB8fHww",
+    "https://images.unsplash.com/photo-1725953122943-57dcaba6fb4a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGxpb25zfGVufDB8fDB8fHww"
+  ]
+};
+
+let animal=document.querySelector("#animal");
+let box=document.querySelector('.box');
+
+function display(val){
+    box.innerHTML='';
+     imageLinks[val].forEach(ele => {
+        let div=document.createElement("div");
+        div.innerHTML=`<img src="${ele}" alt="${val}">`;
+        box.append(div)
+     });
+}
+animal.addEventListener("change",(e)=>{
+    display(animal.value);
+});
+display(animal.value);
+
+</script>
