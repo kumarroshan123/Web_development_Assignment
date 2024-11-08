@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Price & Ratings Graph</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Product Price & Ratings Analyzer</h1>
+  <div class="form-container">
+    <input type="text" id="productName" placeholder="Enter Product Name" >
+    <input type="number" id="productPrice" placeholder="Enter Price" >
+    <input type="number" id="productRating" placeholder="Enter Rating (0-5)" >
+    <button id="addProduct">Add Product</button>
+  </div>
+
+  <div class="graph-container">
+    <h2>Price Graph</h2>
+    <div class="bar-chart" id="priceGraph"></div>
+
+    <h2>Ratings Graph</h2>
+    <div class="bar-chart" id="ratingsGraph"></div>
+  </div>
+
+  <div class="sort-buttons">
+    <button onclick="sortGraph('price')">Sort by Price</button>
+    <button onclick="sortGraph('rating')">Sort by Rating</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

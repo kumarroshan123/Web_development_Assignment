@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Baloo+Paaji+2:wght@400..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    color: white;
+    background-color: black;
+    font-family: "Open Sans", serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-container{
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+#productName,#productPrice,#productRating,#addProduct{
+    box-sizing: border-box;
+    height: 35px;
+    width: 200px;
+    padding: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+}
+#addProduct{
+    background-color: red;
+}
+
+.graph-container{
+    margin: 0px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:30px;
+    padding: 10px;
+}
+
+.bar-chart{
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+.bar-chart > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+
+.bar{
+    border: 2px solid red;
+    width: 100%;
+}
+
+.sort-buttons{
+    margin-top: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.sort-buttons > button{
+    height: 40px;
+    width: 150px;
+    background-color: lawngreen;
+    border-radius: 5px;
+}
