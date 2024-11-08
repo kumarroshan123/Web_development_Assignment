@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>All Tasks</h1>
+    <div class="filtering">
+        <label for="filter">Status</label>
+        <select name="" id="filter">
+        <option value="">Select</option>
+        <option value="pending">Pending</option>
+        <option value="completed">completed</option>
+    </select>
+    </div>
+    <div class="box">
+
+    </div>
+    <div id="form">
+        <label for="title">Title:</label>
+        <input type="text" id="title" placeholder="Enter the Title">
+        <label for="description">description</label>
+        <input type="text" id="description" placeholder="Enter the description">
+        <select name="" id="status">
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+        </select>
+        <button id="submit">Submit</button>
+    </div>
+</body>
+</html>
+<script src="script.js"></script>

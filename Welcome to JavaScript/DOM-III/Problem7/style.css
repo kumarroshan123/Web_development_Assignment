@@ -34,6 +34,7 @@ h1{
 }
 #addProduct{
     background-color: red;
+    cursor: pointer;
 }
 
 .graph-container{
@@ -80,4 +81,5 @@ h1{
     width: 150px;
     background-color: lawngreen;
     border-radius: 5px;
+    cursor: pointer;
 }
