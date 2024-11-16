@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          color: #333;
+        }
+        #root {
+           padding: 15px;
+        }
+        img {
+          width: 100%;
+          height: 450px;
+          border-radius: 10px;
+          display: flex;
+        }
+        h1 {
+          font-size: 2.2rem;
+          margin-top: 20px;
+        }
+        h2 {
+          font-size: 1.5rem;
+          color: rgb(242, 160, 8);
+          margin-top: -10px;
+          margin-bottom: 20px;
+        }
+        .h2{
+            color: grey;
+        }
+        p {
+          font-size: 1.3rem;
+        }
+        hr {
+          margin: 20px 0;
+          border: none;
+          border-top: 1px solid #ccc;
+        }
+        .features {
+          display: flex;
+          justify-content: space-between;
+          gap: 20px;
+        }
+        .features div {
+          flex:1;
+        }
+        .features p {
+          margin: 5px 0;
+          line-height: 1.5;
+          font-size: 1.2rem;
+        }
+        .button {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 20px;
+        }
+        .button button {
+          background-color:black;
+          width: 100%;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          font-size: 1rem;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+        .button p {
+          font-size: 0.9rem;
+          color: #555;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+        .button p img {
+          width: 30px;
+          height: auto;
+        }
+      </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      function App() {
+        return (
+          <>
+            <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTenxvMBNnQ7c_C2-E0Jlx5R-jCv7xwiksBubH9Kdt-j0NPjfZEfeirCT3KPCAlZC6CkhnEN06vvpgwbEKmzRbjQMqWIqQV&usqp=CAY" alt="" />
+            <h1>Automatic Watch</h1>
+            <h2 className="h2">$350.00 USD</h2>
+            <h2 className="h2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Temporibus suscipit quasi asperiores totam dignissimos repellendus
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Reiciendis tempore odit ea minima explicabo, illo vitae
+              perspiciatis asperiores velit libero! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus iure nobis ratione dolor ex, nemo aspernatur cumque veniam ea magni!
+            </p>
+            <hr />
+            <h2>FEATURES</h2>
+            <div className="features">
+              <div>
+                <p>Chronograph</p>
+                <p>Master Chronometer Certified</p>
+                <p>Tachymeter</p>
+              </div>
+              <div>
+                <p>Anti-magnetic</p>
+                <p>Chronometer</p>
+                <p>Small seconds</p>
+              </div>
+            </div>
+            <hr />
+            <div>
+              <h2>PRODUCT DETAILS</h2>
+              <p>
+                <b>Between lugs:</b>20 mm
+              </p>
+              <p>
+                <b>Bracelet:</b>leather strap
+              </p>
+              <p>
+                <b>Case:</b>Steel
+              </p>
+              <p><b>Case Diameter:</b>42 mm</p>
+              <p><b>Dial color:</b>Black</p>
+              <p><b>Crystal:</b> Domed, scratch-resistant sapphire crystal with anti-reflective treatment inside</p>
+              <p><b>Water resistance:</b>5 bar (50 metres / 167 feet)</p>
+            </div>
+            <div className="button">
+               <button>ADD TO CART</button>
+               <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7LOtU99J2R6PlHELOdQfF96ozljl2Jyl4jQ&s" alt="" /> 2-3 business days delivery</p> 
+            </div>
+          </>
+        );
+      }
+      let root = ReactDOM.createRoot(document.querySelector("#root"));
+      root.render(<App />)
+    </script>
+  </body>
+</html>
