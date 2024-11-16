@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+    <style>
+        img {
+        width: 250px;
+        border-radius: 10px;
+      }
+      #root {
+        height: 550px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 80px;
+      }
+      h1 {
+        font-size: 3rem;
+        color: #333;
+      }
+      h2 {
+        font-size: 2.5rem;
+        color: grey;
+        text-align: center;
+        margin-top: -10px;
+      }
+      .btn {
+        display: flex;
+        gap: 20px;
+        margin-top: 10px;
+      }
+      input{
+        padding: 10px 20px;
+        border: 1px solid grey;
+        border-radius: 20px;
+        color: rgb(245, 234, 234);
+        background-color: rgb(216, 212, 212);
+        font-size: 1rem;
+        flex: 1;
+        min-width: 250px;
+      }
+      button {
+        background-color: rgb(109, 211, 245);
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: blue;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      function App(){
+        return (
+           <>
+           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtBNAyx8VnPI7RCAhfvyCzDsvtWt8YX9YfFg&s" alt="" />
+           <h1>SUBSCRIBE</h1>
+           <h2>Subscribe to our newsletter & stay up to date!</h2>
+           <div class="btn">
+            <input type="text" placeholder="john@doe.net" />
+            <button>Subscribe</button>
+            </div>
+           </>
+        );
+      }
+
+      let root = ReactDOM.createRoot(document.querySelector("#root"));
+      root.render(<App />)
+    </script>
+  </body>
+</html>
