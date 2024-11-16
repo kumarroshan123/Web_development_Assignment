@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0;
+          background-color: #f0f8ff;
+        }
+        #root {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+        }
+        .card {
+          border: 2px solid #707b87;
+          border-radius: 10px;
+          padding: 20px;
+          margin: 10px;
+          background-color: #ffffff;
+          text-align: center;
+          width: 150px;
+          cursor: pointer;
+        }
+        .card h1 {
+          font-size: 1.2rem;
+          color: #333;
+        }
+      </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    let peopleGreetings = [
+  { greeting: "Hello", name: "Alice" },
+  { greeting: "Hi", name: "Bob" },
+  { greeting: "Good morning", name: "Charlie" },
+  { greeting: "Hey", name: "Diana" },
+  { greeting: "Greetings", name: "Ethan" },
+  { greeting: "What's up", name: "Fiona" },
+  { greeting: "Howdy", name: "George" },
+  { greeting: "Good afternoon", name: "Hannah" },
+  { greeting: "Yo", name: "Ian" },
+  { greeting: "Welcome", name: "Jasmine" }
+];
+     function Greeting({name,greeting}){
+        return (
+            <div className="card">
+            <h1>{ greeting } {name} !</h1>
+            </div>
+        );
+     }
+     
+     function App(){
+        return (
+            <>
+           {peopleGreetings.map((ele)=>{ 
+              return <Greeting name={ele.name} greeting={ele.greeting}  />
+           }) }
+           </>
+        );
+     }
+     let root = ReactDOM.createRoot(document.querySelector("#root"));
+     root.render(<App />)
+  </script>
+</html>
