@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function Components({ name, completed, onDelete, onToggle }) {
+      return (
+        <div>
+          <h2>Title: {name}</h2>
+          <input type="checkbox" onChange={onToggle} checked={completed} />
+          <button onClick={onDelete}>Delete</button>
+        </div>
+      );
+    }
+
+    function App() {
+      const [state, setState] = React.useState([]);
+      const [keystate, keyset] = React.useState(1);
+      const [input, setInput] = React.useState(""); 
+
+      function Submit() {
+        if (input === "") {
+          alert("Please Write a todo item");
+        } else {
+          let obj = { key: keystate, name: input, completed: false };
+          keyset(keystate + 1);
+          setState([...state, obj]);
+          setInput("");
+        }
+      }
+
+      function Delete(i) {
+        setState(state.filter((ele, index) => index !== i));
+      }
+
+      function Toggle(i) {
+        setState(
+          state.map((item, index) =>
+            index === i ? { ...item, completed: !item.completed } : item
+          )
+        );
+      }
+
+      return (
+        <>
+          <div className="form">
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)} 
+              placeholder="Enter Todo item"
+            />
+            <button onClick={Submit}>Submit</button>
+          </div>
+          <h1>Todo List</h1>
+          <div>
+            {state.map((ele, i) => (
+              <Components
+                key={ele.key}
+                name={ele.name}
+                completed={ele.completed}
+                onDelete={() => Delete(i)}
+                onToggle={() => Toggle(i)}
+              />
+            ))}
+          </div>
+        </>
+      );
+    }
+
+    let root = ReactDOM.createRoot(document.querySelector("#root"));
+    root.render(<App />);
+  </script>
+</html>
