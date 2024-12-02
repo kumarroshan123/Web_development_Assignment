@@ -1,0 +1,49 @@
+/* Reset some basic styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  background-color: #282c34;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav button {
+  background-color: #61dafb;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+  background-color: #4fa3d3;
+}
+
+button:focus {
+  outline: none;
+}
+
+main {
+  padding: 20px;
+}
+
+/* Styles for individual page components */
+.home, .about, .products, .contact {
+  padding: 20px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+  color: #282c34;
+}
