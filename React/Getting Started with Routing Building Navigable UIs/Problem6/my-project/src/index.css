@@ -1,0 +1,23 @@
+body {
+    line-height: 1.6;
+    font-size: 16px;
+    background-color: #f0f2f5;
+    color: #333;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #805656;
+    padding: 10px 20px;
+    color: white;
+  }
+  
+ 
+
