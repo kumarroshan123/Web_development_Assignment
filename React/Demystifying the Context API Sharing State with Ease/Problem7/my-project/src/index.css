@@ -1,0 +1,102 @@
+/* General Reset */
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Theme Styles */
+  .app-container.light {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .app-container.dark {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  /* Theme Switcher */
+  .theme-switcher {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .theme-toggle-btn {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .theme-toggle-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* User Section */
+  .user-section {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .logout-btn {
+    padding: 10px 20px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .logout-btn:hover {
+    background-color: #cc0000;
+  }
+  
+  /* Signup Form */
+  .signup-container {
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    color:rgb(7, 129, 170);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .signup-form h1 {
+    text-align: center;
+  }
+  
+  .signup-form label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .input-field {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .submit-btn {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-color: #218838;
+  }
+  
