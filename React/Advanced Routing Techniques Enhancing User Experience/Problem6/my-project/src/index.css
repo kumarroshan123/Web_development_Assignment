@@ -1,0 +1,119 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #6200ea;
+    padding: 1rem;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  h1, h2 {
+    text-align: center;
+    color: #6200ea;
+  }
+  
+  form {
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-width: 400px;
+    background-color: #fff;
+  }
+  
+  form h2 {
+    margin-bottom: 1rem;
+  }
+  
+  form input, 
+  form textarea, 
+  form button {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  form button {
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #4a00b4;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    background-color: #fff;
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  strong {
+    color: #6200ea;
+  }
+  
+  /* Home Component */
+  .home {
+    text-align: center;
+    margin: 2rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  
+  /* Products Component */
+  .products {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  
+  .products h3 {
+    color: #6200ea;
+  }
+  
+  /* Contact Component */
+  .contact {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  
+  .contact h1 {
+    margin-bottom: 1rem;
+  }
+  
