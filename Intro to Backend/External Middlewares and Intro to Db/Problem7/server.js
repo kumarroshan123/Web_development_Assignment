@@ -8,7 +8,7 @@ const upload = multer({ dest: "src/uploads" });
 cloudinary.config({
     cloud_name: 'dezldcx0r',
     api_key: '342259184431556',
-    api_secret: '7qujoSVAVDU0aCBzCU2Nu282Wic',
+    api_secret: '*************',
   });
 
 app.get("/", (req, res) => {
